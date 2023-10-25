@@ -16,7 +16,7 @@ See [moderngl headless rendering](https://moderngl.readthedocs.io/en/5.8.2/techn
 
   
 
-Create a new virtual sreen using `Xvfb` by defining a virtual display number, a screen and the desired resolution.
+Create a new virtual screen using `Xvfb` by defining a virtual display number, a screen and the desired resolution.
 
 ```bash
 
