@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"a7df1836c120a055","x":-560,"y":-320,"width":460,"height":380,"type":"group","label":"Capture & Interaction"},
+		{"id":"2cd6144656bc691a","x":-40,"y":-320,"width":460,"height":380,"type":"group","label":"Alignment & Completion"},
+		{"id":"2d336f7b6354d205","x":480,"y":-320,"width":460,"height":380,"type":"group","label":"Segmentation & Generation"},
+		{"id":"1216fc5ba3965837","type":"file","file":"papers/texture-segmentation.md","x":510,"y":-140,"width":400,"height":60,"color":"5"},
+		{"id":"fa4b0de0034a0c72","type":"file","file":"papers/object-generation.md","x":510,"y":-40,"width":400,"height":60,"color":"5"},
+		{"id":"db6fd56c1d37460d","x":-10,"y":-140,"width":400,"height":60,"type":"text","text":"## AlignmentTools"},
+		{"id":"87b65750cd2fcca8","x":-10,"y":-40,"width":400,"height":60,"type":"text","text":"## CombinationTools"},
+		{"id":"2bda4606a2e1a63d","x":-530,"y":-140,"width":400,"height":60,"type":"text","text":"## XR Data Capture"},
+		{"id":"8e0a7ec7f313eab5","x":-530,"y":-40,"width":400,"height":60,"type":"text","text":"## InteractionTools"},
+		{"id":"8cce702461f26882","type":"text","text":"### Geosharpi","x":-530,"y":-280,"width":200,"height":50},
+		{"id":"bccd6f6d802905f4","x":-240,"y":-280,"width":110,"height":50,"type":"text","text":"### C#"},
+		{"id":"9c0495f560c1af40","type":"text","text":"### Geomapi","x":-10,"y":-280,"width":200,"height":50},
+		{"id":"0a71c5656bd5ad0e","type":"text","text":"### python","x":240,"y":-280,"width":150,"height":50},
+		{"id":"2ba958bad3f8a270","type":"text","text":"### DRM","x":510,"y":-280,"width":200,"height":50},
+		{"id":"41af778bb903d9b5","type":"text","text":"### Python","x":760,"y":-280,"width":150,"height":50}
+	],
+	"edges":[]
+}

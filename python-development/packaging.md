@@ -47,7 +47,7 @@ A package is a folder containing an `__init__.py` file and a collection of modul
 
 #### Importing in the package
 Your code is designed to run outside of the package. Since python is very strict about where the code is run from, you will need to import your relative modules as if you are importing them from outside of the package ex:
-```py
+```python
 # to import module1.py in module2.py
 import mypackage.module1
 ```
@@ -57,7 +57,7 @@ To remove the guesswork in evaluating if your package works properly, we use [un
 
 ### Test file
 Each `module.py` should have a corresponding `test_module.py` in the `tests/` folder. To test the functionality, call every function and compare the output with what you expect.
-```py
+```python
 import unittest
 
 class TestMyClass(unittest.TestCase):
@@ -83,7 +83,7 @@ Keeping your code readable with [docstrings](https://sphinxcontrib-napoleon.read
 
 ### Sourcecode documenting
 If you want others (or yourself in the future) to understand your code, you should explain the functionality of all your functions and classes. Use [autoDocstring](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring) to automatically generate the template.
-```py
+```python
 def function(value : str) -> str:
     """_summary_
 
@@ -110,7 +110,7 @@ sphinx-quickstart                 # set up the docs sources
 #### Autodoc
 [Sphinx](https://www.sphinx-doc.org/en/master/) can automatically create the documentation structure, based on the package and its modules. Activate these extensions in `conf.py`
 
-``` py
+``` python
 extensions = [
     'sphinx.ext.autodoc',           # search for docstrings
     'sphinx.ext.autosummary',       # Search for summaries
@@ -122,13 +122,13 @@ napoleon_use_param = False
 napoleon_use_ivar = True
 ```
 Generate the source framework using APIdoc
-```
+```shell
 sphinx-apidoc -o . ../mypackage/ -e
 ```
 
 #### Build the documentation
 The HTML code can be easily generated using the make file in the `docs/` directory  
-```
+```shell
 ./make html
 ```
 

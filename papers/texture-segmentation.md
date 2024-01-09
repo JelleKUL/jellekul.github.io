@@ -20,11 +20,11 @@
   - A lot of point based segmentation networks with normalized point clouds
   - This means they don't directly work with the geometry, but a abstraction of it
   - In meshes, the most detailed part is the texture information
-  - rgb is mostly used as a extra parameter in geometry based segmentation, making it difficult to group repeating textures with distinct colors
+  - rgb is mostly used as a extra parameter in geometry based segmentation, making it difficult to group repeating textures with distinct colours
   - a lot of image based segmentation from localised images
-  - The uv map is rerely used to segment the scene, mostly because of the lack of a one to one relation between the scene and the taxture map.
+  - The uv map is rarely used to segment the scene, mostly because of the lack of a one to one relation between the scene and the texture map.
 - Boundary detection
-  - Existing edge detection like (canny or HED) work well for clear geometrix boundaries, bt overdetect of rough textures like brick walls.
+  - Existing edge detection like (canny or HED) work well for clear geometric boundaries, bt overdetect of rough textures like brick walls.
   - use Factorisation based Texture segmentation exists and can sample the texture to find similar patches to group them into a single texture group.
 
 ## Methodology
@@ -44,7 +44,7 @@
 
 ### Edge Detection
 
-- The segmented image is pefect to detect the boundaries of the textures
+- The segmented image is perfect to detect the boundaries of the textures
 - Use canny or HED edge detection to find the edges
 - Find the hough lines to get parametrized straight lines in the detected edges, also use phoughlines for line segments
 
