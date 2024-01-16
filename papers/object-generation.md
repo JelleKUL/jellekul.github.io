@@ -1,71 +1,109 @@
-# Object and texture completion of partial 3D scanned objects
+# Geometry and texture completion of partially scanned 3d objects
 
 ## Introduction
 
  **Structure**
  - Context: the need for partial shape completion
-	 	- 3d scans of objects are often incomplete
-		 	- because of occlusions, contact with other objects
-	 	- the reconstruction is often split in 2 parts, the geometry and the texture
+	 - indoor environments are captured using lidar or photogrammetry
+	 - 3d scans of objects are often incomplete
+		 - because of occlusions and contact with other objects
+		 - this becomes a problem when the objects are isolated from the environment
+	 - When we isolate an object, we need to complete it's occluded parts
+	 - our goal is completing those partial objects both for the geometry as the texture
  - Current SOA solutions:
-	 	- see background and related work
-	 	- prompt based generation/ diffusion models
+	 - the reconstruction is often split in 2 parts, the geometry and the texture
+	 - Geometry
+		 - point based completion
+		 - SDF based completion
+	 - Texture
+		 - point/voxel based
+		 - 2d image based
+	 - prompt based generation/ diffusion models
+		 - Using partial 3d data as 2d input is difficult
  - The main problem/ shortcoming
-	 	- the texture inpainting is not good enough
-	 	- the existing material inpainting techniques either:
-	 	- completely fill in the mesh based on a single material prompt
- 		- use a 2d image as a base for the texture field prediction
- 		- inpaint a very small area on the mesh
- 		- use a point based inpainting technique, which limits the resolution of the final result
+	 - the texture inpainting is not good enough
+	 - the existing material inpainting techniques either:
+		 - completely fill in the mesh based on a single material prompt
+		 - use a 2d image as a base for the texture field prediction
+		 - inpaint a very small area on the mesh
+		 - use a point based inpainting technique, which limits the resolution of the final result
  - Our proposed solution / the main contribution
- 	- introduce an extra abstraction-layer which first predicts the material
- 		- use the limited resolution 3d inpaintig techniques to predict the material type
- 		- after the material is predicted, we use 2d inpainting technique to paint in the full texture
-
-Completing 3D models of partial 3D scanned objects, both using existing geometry completion networks and finding new texture completion thingy. The main contribution will be using the existing partial texture data to complete the rest of the mesh.
-- the geometry can be predicted using implicit SDF's this ensures the object is represented volumetrically and has a clear surface definition (in contrast to point clouds)
-- the biggest difference is using 2 steps to predict the final colour
-	- 1st predict the material
-	- 2nd predict the colour per material based on the texture-map
+	 - Use the existing partial texture as input for the completion
+	 - introduce an extra abstraction-layer which first predicts the material
+		 - the geometry can be predicted using implicit SDF's this ensures the object is represented volumetrically and has a clear surface definition (in contrast to point clouds)
+		 - use the limited resolution 3d inpainting techniques to predict the material type
+		 - after the material is predicted, we use 2d inpainting technique to paint in the full texture
 
 ## Background and Related Work
 
  **Structure**
- - A lot of research in geometry completion
- - A lot of research in object texturing
- - A lot of research on image inpainting
- - Not a lot on existing texture completion
+ - Object generation
+ - Geometry completion
+ - Object texturing
+ - Texture inpainting
+ - Texture completion?
+
+### Object generation
+
+[TM-NET: Deep Generative Networks for Textured Meshes](http://arxiv.org/abs/2010.06217)
+> 3d Mesh and texture generation
+
+[Zero-1-to-3: Zero-shot One Image to 3D Object](http://arxiv.org/abs/2303.11328)
+> Nerf creation from single rgb image
 
 ### Geometry completion
-
-- the generative models need a standardised input, this is why meshes are rarely used directly
+the generative models need a standardised input, this is why meshes are rarely used directly
 	- converted to pointclouds or SDF's
 
 #### Point based
 Uses normalized point clouds as partial inputs to further complete the shape
 
-- [Implicit Functions in Feature Space for 3D Shape Reconstruction and Completion](https://github.com/jchibane/if-net)
-    > IF-NET Implicit feature based point prediction
-- [Point-Voxel Diffusion](https://github.com/alexzhou907/PVD) 
-	> 2022 (3D-diffuser)
+[Implicit Functions in Feature Space for 3D Shape Reconstruction and Completion](https://github.com/jchibane/if-net)
+> IF-NET Implicit feature based point prediction
+
+[3D Shape Generation and Completion through Point-Voxel Diffusionn](https://github.com/alexzhou907/PVD) 
+> 2022 (3D-diffuser)
 
 #### Implicit
 Uses sdf's to create and a selected zone for completion
 
-- [AutoSDF](https://github.com/yccyenchicheng/AutoSDF) 
-    > 2022 (VQ-VAE & transformer)
-- [ShapeFormer: Transformer-based Shape Completion via Sparse Representation](https://github.com/qheldiv/shapeformer)
-    > transformer based 
+[AutoSDF](https://github.com/yccyenchicheng/AutoSDF) 
+> 2022 (VQ-VAE & transformer)
+
+[ShapeFormer: Transformer-based Shape Completion via Sparse Representation](https://github.com/qheldiv/shapeformer)
+> transformer based 
 
 ### Object texturing
 Uses spatially encoded textures in 3d space to give each point a distinct colour, lower resolution but better spatially aware 
+
 #### Implicit
-- [Texture Fields: Learning Texture Representations in Function Space](https://doi.org/10.48550/arXiv.1905.07259)
-    > Neural texture representation 
+[Texture Fields: Learning Texture Representations in Function Space](https://doi.org/10.48550/arXiv.1905.07259)
+> Neural texture representation 
 
 ### Image inpainting
 
-- [Stable Diffusion](https://github.com/Stability-AI/generative-models)
+[Stable Diffusion](https://github.com/Stability-AI/generative-models)
+> generative texture inpainting
+
+### Texture inpainting
+
+[Texture Inpainting for Photogrammetric Models](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14735)
+> 2D inpainting of small selected areas
+
+[Texture Inpainting Using Efficient Gaussian Conditional Simulation](https://doi.org/10.1137/16M1109047)
+> gaussian texture inpainting
+
+### Texture generation
+
+#### Implicit
+
+[Texture Fields: Learning Texture Representations in Function Space](http://arxiv.org/abs/1905.07259)
+> creating a shape independent representation for the texture 
+
+#### UV based
+
+[TUVF: LEARNING GENERALIZABLE TEXTURE UV RADIANCE FIELDS](https://doi.org/10.48550/arXiv.2305.03040)
+> Generalizing the uv map to generate a full texture
 
 ### Texture completion
 
@@ -76,25 +114,28 @@ Uses spatially encoded textures in 3d space to give each point a distinct colour
 - [TSCom-Net: Coarse-to-Fine 3D Textured Shape Completion Network](https://doi.org/10.48550/arXiv.2208.08768)
     > Texture inpainting based on predicted colours
 
-#### 2D based
 
-- [Texture Inpainting for Photogrammetric Models](https://onlinelibrary.wiley.com/doi/10.1111/cgf.14735)
-	> 2D inpainting of small selected areas
 
 ## Methodology
 
-- make a schema for the full workflow
-- steps:
-	- convert incomplete mesh to unsigned distance field (not signed because open mesh)
-	- detect the different materials in the texture and segment them (using SAM)
-	- predict the completed shape using AutoSDF
-	- Material prediction using if-Net
-	- texture inpainting using (patch-based texture inpainting)
+**Structure**
+- convert incomplete mesh to unsigned distance field (not signed because open mesh)
+	- MESH2SDF
+- detect the different materials in the texture and segment them
+	- SAM
+- predict the completed shape
+	- AUTOSDF
+- Material prediction
+	- if-Net Texture
+- texture inpainting
+	- patch-based texture inpainting / Stable diffusion
+
+Create a big schema showing all the steps
 
 ### Implicit surface generation
-Convert the incomplete meshes to voxelgrids as input for the networks, this is done with 'mesh2sdf' 
+Convert the incomplete meshes to voxelgrids containing distaces as input for the networks, this is done with 'mesh2sdf' 
 > Note: The object is converted to a USDF (unsigned) because the input data is a partially scanned mesh
-> 
+> SDF's are more precise than voxelgrids, leading to better results
 
 ### Material segmentation
 Use material detection to segment the uv-map of the object into distinct materials, for this we use Segment anything model, while the embedding is pretty slow, it returns a reliable segmentationmask.
@@ -151,14 +192,20 @@ The existing part of the texture is used as a reference for the inpainting for t
 
 
 ### Geometry reconstruction
+This part is not really anything new, apart from validating the conversion between the incomplete meshes to SDF's and how they change compared to the ground truth.
 
 - compare against ground truth
-- check how the sdf changes the existing parts
+- check how the sdf changes the existing parts 
 
 ### Texture reconstruction
+
 - compare against single step completion networks
+	- if-net_texture trained on the shape-net dataset with direct colour prediction
 - compare against ground truth
 
 ## Discussion
-
+- Are texturefields too much linked to a similar structure eg: cars, humans,... to be used for something as wide as generic indoor objects?
+- the extra step allows for a more precise inpainting process with clear material separation
+- it does not improve non uniform graphic elements 
+- Increases processing-time
 ## Conclusion
