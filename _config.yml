@@ -29,9 +29,10 @@ twitter_username: jellevermandere
 github_username:  jellekul
 
 # Build settings
-theme: minima
+remote_theme: rundocs/jekyll-rtd-theme
 plugins:
   - jekyll-feed
+  - jekyll-readme-index
 
 collections:
   publications:
