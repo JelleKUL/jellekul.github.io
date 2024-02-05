@@ -1,4 +1,0 @@
-# Semantic UV Unwrapping
-
-## Introduction
-- 

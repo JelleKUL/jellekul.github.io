@@ -34,15 +34,6 @@ plugins:
   - jekyll-feed
   - jekyll-readme-index
 
-collections:
-  publications:
-    output: true
-
-  research:
-    output: true
-
-  development:
-    output: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
