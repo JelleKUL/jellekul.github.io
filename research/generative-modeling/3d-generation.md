@@ -94,3 +94,11 @@ Denoising diffusion models (DDMs)
 
 [GET3D: A Generative Model of High Quality 3D Textured Shapes Learned from Images](https://nv-tlabs.github.io/GET3D/)
 > GAN trained on images
+
+- [Point-Voxel Diffusion](https://github.com/alexzhou907/PVD) 2022 (3D-diffuser)
+
+- [PoinTR](https://github.com/yuxumin/PoinTr) 2021 (3D-transformer)
+
+- [SDFusion](https://github.com/yccyenchicheng/SDFusion) 2023 (latent-diffuser)
+
+- [LION](https://github.com/IGLICT/TM-NET) 2022 (latent-diffuser)

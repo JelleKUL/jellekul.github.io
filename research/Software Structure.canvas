@@ -2,7 +2,6 @@
 	"nodes":[
 		{"id":"a4aec39a9162a617","type":"group","x":0,"y":-126,"width":900,"height":346,"label":"Back End Server"},
 		{"id":"79532e39637e32ef","type":"group","x":-460,"y":-126,"width":400,"height":346,"label":"Front End Device"},
-		{"id":"37391125cae5d90f","type":"text","text":"POST\n`add-session`","x":142,"y":-106,"width":156,"height":86},
 		{"id":"24e0df4d69336e6b","type":"text","text":"`session.ttl`","x":-120,"y":-106,"width":200,"height":60},
 		{"id":"c6699b4d8385ff5a","type":"text","text":"Capture Session\n`Geosharpi`","x":-440,"y":-106,"width":250,"height":60},
 		{"id":"d7c1db1bd461eed2","type":"text","text":"Geo-Referencing\n`AlignmentTools`","x":340,"y":-106,"width":240,"height":60},
@@ -12,7 +11,8 @@
 		{"id":"a2e45e5651557c87","type":"text","text":"Live Link","x":-120,"y":140,"width":200,"height":60},
 		{"id":"f180166d08cecdd9","type":"text","text":"Scene Segmentation\n`SegmentationTools`","x":660,"y":-106,"width":220,"height":60},
 		{"id":"be38abb9274da9e9","type":"text","text":"Scene Generation\n`GenerationTools`","x":660,"y":23,"width":220,"height":60},
-		{"id":"456645ee8c967790","type":"text","text":"Dynamic Reality Model","x":340,"y":140,"width":240,"height":60}
+		{"id":"456645ee8c967790","type":"text","text":"Dynamic Reality Model","x":340,"y":140,"width":240,"height":60},
+		{"id":"37391125cae5d90f","type":"text","text":"POST\n`add-session`","x":120,"y":-112,"width":156,"height":73}
 	],
 	"edges":[
 		{"id":"be821434dee90b31","fromNode":"c6699b4d8385ff5a","fromSide":"right","toNode":"24e0df4d69336e6b","toSide":"left"},

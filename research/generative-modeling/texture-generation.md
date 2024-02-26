@@ -27,3 +27,6 @@ This paper proposes a new way to represent textures on 3D models, by learning a 
 
 [TUVF: Learning Generalizable Texture UV Radiance Fields](https://arxiv.org/abs/2305.03040)
 
+- [TEXTure](https://github.com/TEXTurePaper/TEXTurePaper) 2023
+
+    > TEXTure takes an input mesh and a conditioning text prompt and paints the mesh with high-quality textures, using an iterative diffusion-based process. In the paper we show that TEXTure can be used to not only generate new textures but also edit and refine existing textures using either a text prompt or user-provided scribbles.
