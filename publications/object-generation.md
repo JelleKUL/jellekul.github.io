@@ -181,7 +181,11 @@ The existing part of the texture is used as a reference for the inpainting for t
 ### Datasets
 
 - [ShapeNet](https://shapenet.org/)
+- [ScanNet](http://www.scan-net.org/)
 - [PartNet](https://partnet.cs.stanford.edu/)
+- [3DObjTex.v1](https://cvi2.uni.lu/sharp2022/challenge1/)
+- [Matterport3d](https://niessner.github.io/Matterport/)
+- [Real World Textured Things (RWTT)](https://texturedmesh.isti.cnr.it/)
 
 #### Data processing
 

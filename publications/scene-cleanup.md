@@ -3,22 +3,38 @@
 ## Introduction
 
 **Structure**
-- Context: the need for hole infilling
+- Context: the need for hole filling
+	- After scans we need clean structural models for further processing
+	- For remodeling and renovations, we also need a textural representation
 - Current SOA solutions
 	- Full workflows
 		- Object detection and inpainting based on 2d image
-	- Geometry prediction
-		- Scancomplete Geometry + semantics
-	- Texture inpainting
+			- focussed on removing elements against walls, not in the middle of the room
+		- generate an sdf
+			- no textural reconstruction
+	- Geometry completion
+		- ScanComplete Geometry + semantics
+		- Texture inpainting
+	- Scene Segmentation
+		- instance segmentation 
+	- Texture Inpainting
+- The key shortcomings
+	- requires images for 2d inpainting
+	- the inpainting either happens in 3d using voxels or vertex colours, resulting in a low resolution, or in 2d from a projected view, difficult due to occlusions
+- Our solution
+	- use a state of the art object detection and segmentation
+	- keep the detected segmented instances to also create uv maps of the remaining environment
+	- perform the texture inpainting on the partial mesh hole using the surrounding faces as reference
+	- use it on the uv plane to eliminate the need for extra images and prevent occlusions covering the important texture parts
 
 
 ## Background and Related Work
 
 **Structure**
-- Object detection
+- Object detection 
 - Hole filling
 - Semantic unwrapping
-- Texture reconstruction
+- Texture reconstruction 
 
 ### Object detection
 
@@ -28,9 +44,16 @@
 [VoteNet 2019](https://github.com/facebookresearch/votenet)
 > an end-to-end 3D object detection network based on a synergy of deep point set networks and Hough voting.
 
+### Semantic segmentation
+
+[PTv3](https://github.com/Pointcept/Pointcept)
+> Point transformer v3
+
+
 ### Plane detection
 
-> [Latent RANSAC 2018](https://github.com/rlit/LatentRANSAC)
+[Latent RANSAC 2018](https://github.com/rlit/LatentRANSAC)
+> a method that can evaluate a RANSAC hypothesis in constant time.
 
 ### Scene completion
 
