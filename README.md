@@ -11,7 +11,6 @@ You can find my different research topics and extra info about useful concepts.
 ## Publications
 [object-generation](publications/object-generation.md)
 [scene-completion](publications/scene-completion.md)
-[semantic-uv-unwrapping](publications/semantic-uv-unwrapping.md)
 [texture-segmentation](publications/texture-segmentation.md)
 
 ## Development
