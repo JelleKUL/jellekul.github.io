@@ -1,24 +1,36 @@
 # Semantic UV Mapping to improve texture inpainting
 
 ## Introduction
-Current 2D texture inpainting methods struggle to perform well on reconstructed geometry due to the improper uv mapping pf the scene
+Current 2D texture inpainting methods struggle to perform well on reconstructed geometry due to the improper uv mapping of the scene and its objects
 - Context
-	- Meshes are a good way to store indoor scenes, due to efficient 3D representation and and detailed textures for detailed parts
-	- Captured scenes are often fully furnished and incomplete, leading to a lot of missing information
-	- There is a certain disconnect between the geometric and textural data in a mesh.
+	- The AECO industry captures more and more data
+	- There is a need for empty indoor scenes without any holes.
+		- remodelling, renovation, interactivity
+	- Current captured scenes are often fully furnished and incomplete, leading to a lot of missing information
+	- Meshes are a good way to store indoor scenes, due to efficient 3D representation and detailed textures for detailed parts
 - Problem
-	- This is a big problem when trying to complete missing parts in a mesh, visually
-	- Texture inpainting relies on its surroundings to properly predict the missing parts, when these are not in the same place on the uv plane, it can lead to disjointed maps.
+	- When removing the object in the scenes, large holes are left behind
+	- they need to be completed, both geometrically and texturally
+	- Geometry reconstruction
+		- good results and far along.
+	- Texture inpainting:
+		- There is a certain disconnect between the geometric and textural data in a mesh.
+		- This is a big problem when trying to complete missing parts in a mesh, visually
+		- Texture inpainting relies on its surroundings to properly predict the missing parts, when these are not in the same place on the uv plane, it can lead to disjointed maps.
 - SOA Solutions / Shortcomings
 	- inpaint in a 2D picture of the 3D view and reproject
 		- Can't overcome occlusions and will cause double paintovers
 	- inpaint only small parts and dynamically reproject
-		- difficult to use for big gaps in data
+		- difficult to use for big gaps in data and multi-material
+	- Use texturefields for full 3D workflow
+		- too low resolution for a full scene
 - Our Solution
 	- Leverage semantic instance segmentation to better divide the scene in distinct parts.
 	- unwrap each object separately to minimise distortion
 	- Inpaint the new geometry using the semantic mask to limit the surrounding reference to a single object
 ## Background and related work
+
+
 ### Object detection
 [V-DETR 2023](https://github.com/V-DETR/V-DETR)
 > Uses DETR (detection transformer) in 3D with Vertex Relative Position Encoding to improve locality
@@ -35,6 +47,9 @@ Current 2D texture inpainting methods struggle to perform well on reconstructed 
 
 [UnScene3D](https://rozdavid.github.io/unscene3d)
 >  the first fully unsupervised 3D learning approach for class-agnostic 3D instance segmentation of indoor scans. UnScene3D first generates pseudo masks by leveraging self-supervised color and geometry features to find potential object regions.
+
+[Sai3d](https://arxiv.org/html/2312.11557v2)
+> a novel zero-shot 3D instance segmentation approach that synergistically leverages geometric priors and semantic cues derived from Segment Anything Model (SAM).
 
 [Texture-based mesh refinement 2023](https://isprs-annals.copernicus.org/articles/X-1-W1-2023/479/2023/)
 > Detect different materials on the 2D texture plane to refine the mesh separation.
@@ -89,15 +104,18 @@ Current 2D texture inpainting methods struggle to perform well on reconstructed 
 > we present a novel transformer-based model for large hole inpainting, which unifies the merits of transformers and convolutions to efficiently process high-resolution images.
 
 [CM-GAN 2022](https://github.com/htzheng/CM-GAN-Inpainting)
-> We introduce a new cascaded modulation design that cascades global modulation with spatial adaptive modulation for better hole filling. We also introduce an object-aware training scheme to facilitate better object removal. CM-GAN significantly improves the existing state-of-the-art methods both qualitatively and quantitatively.
+>We introduce a new cascaded modulation design that cascades global modulation with spatial adaptive modulation for better hole filling. We also introduce an object-aware training scheme to facilitate better object removal. CM-GAN significantly improves the existing state-of-the-art methods both qualitatively and quantitatively.
 
-[Surface texture inpainting](https://github.com/johnpeterflynn/surface-texture-inpainting-net)
-> We present the Surface Texture Inpainting Network (STINet), a graph neural network-based model that generates complete surface texture for partially textured 3D meshes. In contrast to 2D image inpainting which focuses on predicting missing pixel values on a fixed regular grid, STINet aims to inpaint color information on mesh surfaces of varying geometry and topology. STINet learns from spatial information such as vertex positions and normals as well as mesh connectivity to effectively predict vertex color.
+[Free-Form Surface Texture Inpainting Using Graph Neural Networks](https://github.com/johnpeterflynn/surface-texture-inpainting-net)
+>We present the Surface Texture Inpainting Network (STINet), a graph neural network-based model that generates complete surface texture for partially textured 3D meshes. In contrast to 2D image inpainting which focuses on predicting missing pixel values on a fixed regular grid, STINet aims to inpaint color information on mesh surfaces of varying geometry and topology. STINet learns from spatial information such as vertex positions and normals as well as mesh connectivity to effectively predict vertex color.
 
 [Automatic Defurnishing of indoor panoramas 2024](https://matterport.github.io/automatic-defurnishing-of-indoor-panoramas/)
-> A pipeline that leverages Stable Diffusion to improve inpainting results in the context of defurnishing---the removal of furniture items from indoor panorama images. Specifically, we illustrate how increased context, domain-specific model fine-tuning, and improved image blending can produce high-fidelity inpaints that are geometrically plausible without needing to rely on room layout estimation. We demonstrate qualitative and quantitative improvements over other furniture removal techniques.
+>A pipeline that leverages Stable Diffusion to improve inpainting results in the context of defurnishing---the removal of furniture items from indoor panorama images. Specifically, we illustrate how increased context, domain-specific model fine-tuning, and improved image blending can produce high-fidelity inpaints that are geometrically plausible without needing to rely on room layout estimation. We demonstrate qualitative and quantitative improvements over other furniture removal techniques.
+
+[PanoDR: Spherical Panorama Diminished Reality for Indoor Scenes](https://github.com/VCL3D/PanoDR)
+>a model that initially predicts the structure of an indoor scene and then uses it to guide the reconstruction of an empty -- background only -- representation of the same scene.
 ## Methodology
-### Semantic instance segmentation
+### Scene segmentation
 static and dynamic objects are detected using a semantic instance segmentation. The dynamic objects are removed from the scene this results in large holes in the remaining static elements.-
 - Use "" to segment the scene, the segmentation serves 2 purposes: 
 	- first to distinguish the loose objects from the rest of the scene
