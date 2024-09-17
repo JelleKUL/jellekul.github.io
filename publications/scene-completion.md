@@ -39,12 +39,20 @@
 ### Sparse voxel hierarchies
 
 [XCube 2024](https://research.nvidia.com/labs/toronto-ai/xcube/)
-> - Nvidia Labs (no code yet)
+> - Nvidia Labs
 > - Large-Scale 3D Generative Modeling using Sparse Voxel Hierarchies.
 > - a Hierarchical voxel latent diffusion model build on VDB()
 > - arbitrary attributes
 > Our method trains a hierarchy of latent diffusion models over a hierarchy of sparse voxel grids ={G1,...,GL}. Our model first trains a **sparse structure VAE** which learns a compact latent representation for each level of the hierarchy. We then train a latent diffusion model to generate each level of the hierarchy conditioned on the coarser level above it. At inference time, we simply run each diffusion model in a cascaded fashion from coarse to fine to generate novel shapes and scenes. By leveraging the decoder of the sparse structure VAE at inference time, our generated high-resolution voxel grids additionally contain various attributes, such as normals and semantics, which can be used in down-stream applications.
 
+[CSVO: Clustered Sparse Voxel Octrees](https://doi.org/10.3390/sym14102114)
+> A Hierarchical Data Structure for Geometry Representation of Voxelized 3D Scenes
+
+[High resolution sparse voxel DAGs](https://doi.org/10.1145/2461912.2462024)
+> generalising the tree to a directed acyclic graph (DAG). While the SVO allows for efficient encoding of empty regions of space, the DAG additionally allows for efficient encoding of _identical_ regions of space, as nodes are allowed to share pointers to identical subtrees. (only one bit)
+
+[Geometry and attribute compression for voxel scenes](https://doi.org/10.1111/cgf.12841)
+> a method to compress _arbitrary_ data, such as colors, normals, or reflectance information. By decoupling geometry and voxel data via a novel mapping scheme, we are able to apply the DAG principle to encode the topology, while using a palette-based compression for the voxel attributes, leading to a drastic memory reduction.
 ### Object detection
 
 [V-DETR 2023](https://github.com/V-DETR/V-DETR)
@@ -102,19 +110,14 @@
 [No Shadow Left Behind](https://arxiv.org/abs/2012.10565)
 > 2d object removal and inpainting
 
-### Semantic unwrapping
+[RfD-Net: Point Scene Understanding by Semantic Instance Reconstruction](https://github.com/GAP-LAB-CUHK-SZ/RfDNet) 
+> 2021
 
-[GraphSeam 2020](https://www.researchgate.net/publication/346475280_GraphSeam_Supervised_Graph_Learning_Framework_for_Semantic_UV_Mapping)
-> we use the power of supervised GNNs for the first time to propose a fully automated UV mapping framework that enables users to replicate their desired seam styles while reducing distortion and seam length.
+[Point Scene Understanding via Disentangled Instance Mesh Reconstruction](https://github.com/ashawkey/dimr) 
+> 2022
 
-[AUV-Net](https://research.nvidia.com/labs/toronto-ai/AUV-NET/)
-> AUV-Net learns **aligned UV maps** for a set of 3D shapes, enabling us to easily transfer textures to provided shapes by copying texture images.
-
-[Nuvo: Neural UV Mapping for Unruly 3D Representations](https://pratulsrinivasan.github.io/nuvo/)
-> a UV mapping method designed to operate on geometry produced by 3D reconstruction and generation techniques. Instead of computing a mapping defined on a mesh's vertices, our method Nuvo uses a neural field to represent a continuous UV mapping, and optimizes it to be a valid and well-behaved mapping for just the set of visible points, i.e. only points that affect the scene's appearance.
-
-[Flatten Anything: Unsupervised Neural Surface Parameterization](https://arxiv.org/abs/2405.14633)
->  an unsupervised neural architecture to achieve global free-boundary surface parameterization via learning point-wise mappings between 3D points on the target geometric surface and adaptively-deformed UV coordinates within the 2D parameter domain.
+[SG-NN: Sparse Generative Neural Networks for Self-Supervised Scene Completion of RGB-D Scans](https://github.com/angeladai/sgnn)
+> 2020
 ### Texture inpainting
 
 [Gaussian texture inpainting](https://github.com/Ozeuth/2D-Texture-Inpainter?tab=readme-ov-file)
@@ -133,6 +136,10 @@
 > We present the Surface Texture Inpainting Network (STINet), a graph neural network-based model that generates complete surface texture for partially textured 3D meshes. In contrast to 2D image inpainting which focuses on predicting missing pixel values on a fixed regular grid, STINet aims to inpaint color information on mesh surfaces of varying geometry and topology. STINet learns from spatial information such as vertex positions and normals as well as mesh connectivity to effectively predict vertex color.
 
 ## Methodology
+
+### Implicit Scene generation
+Creating an implicit representation of the scene,
+- TSDF (truncated signed distance field)
 
 ### Object detection
 

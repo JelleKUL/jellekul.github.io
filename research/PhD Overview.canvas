@@ -5,16 +5,16 @@
 		{"id":"2d336f7b6354d205","type":"group","x":480,"y":-320,"width":460,"height":820,"label":"Segmentation & Generation"},
 		{"id":"8cce702461f26882","type":"text","text":"### Geosharpi","x":-540,"y":-300,"width":200,"height":50,"color":"1"},
 		{"id":"9c0495f560c1af40","type":"text","text":"### Geomapi","x":-20,"y":-300,"width":200,"height":50,"color":"1"},
-		{"id":"2ba958bad3f8a270","type":"text","text":"### DRM","x":500,"y":-300,"width":200,"height":50,"color":"1"},
 		{"id":"bccd6f6d802905f4","type":"text","text":"### C#","x":-320,"y":-300,"width":110,"height":50,"color":"4"},
 		{"id":"0a71c5656bd5ad0e","type":"text","text":"### Python","x":200,"y":-300,"width":140,"height":50,"color":"6"},
-		{"id":"41af778bb903d9b5","type":"text","text":"### Python","x":720,"y":-300,"width":140,"height":50,"color":"6"},
 		{"id":"2bda4606a2e1a63d","type":"text","text":"## XR Data Capture\n### Data Capture\n> Capture images and 3D meshes\n### Data Storage\n>RDF based data standardisation\n### Data Creation\n> Synthetic data creation using virtual scanners","x":-540,"y":-220,"width":420,"height":340},
 		{"id":"db6fd56c1d37460d","type":"text","text":"## AlignmentTools\n### 2D Matching\n> Using Images to align 2 datasets\n### 3D Matching\n> Using meshes/pointclouds\n### Pose Voting\n> Interpolating the best estimated pose","x":-20,"y":-220,"width":420,"height":340},
-		{"id":"1c7ec99f4e943ae8","type":"text","text":"## SegmentationTools\n### Object detection\n> Deep learning bounding box detection\n### Texture refinement\n> Texture based mesh refinement\n### Semantic UV wrapping\n> mesh to uv based on type","x":500,"y":-220,"width":420,"height":340},
-		{"id":"131955d29bca0857","type":"text","text":"## GenerationTools\n### Shape Completion\n> SDF Based object prediction\n### Texture Completion\n> Material Prediction / texture inpainting\n### Scene Completion\n> Room + object completion","x":500,"y":140,"width":420,"height":340},
 		{"id":"87b65750cd2fcca8","type":"text","text":"## CombinationTools\n### Point cloud combination\n> Combining old with newer point cloud\n### Mesh Combination\n> Combining triangles and textures","x":-20,"y":140,"width":420,"height":340},
-		{"id":"8e0a7ec7f313eab5","type":"text","text":"## InteractionTools\n### TBT","x":-540,"y":140,"width":420,"height":340}
+		{"id":"8e0a7ec7f313eab5","type":"text","text":"## InteractionTools\n### Voxel guided completion\n\n### Voxel guided Transformations","x":-540,"y":140,"width":420,"height":340},
+		{"id":"2ba958bad3f8a270","type":"text","text":"### DRM","x":500,"y":-300,"width":200,"height":50,"color":"1"},
+		{"id":"41af778bb903d9b5","type":"text","text":"### Python","x":720,"y":-300,"width":140,"height":50,"color":"6"},
+		{"id":"1c7ec99f4e943ae8","type":"text","text":"## SegmentationTools\n### Object detection\n> Deep learning bounding box detection\n### Texture refinement\n> Texture based mesh refinement\n### Semantic UV wrapping\n> mesh to uv based on type","x":500,"y":-220,"width":420,"height":340},
+		{"id":"131955d29bca0857","type":"text","text":"## GenerationTools\n### Shape Completion\n> SDF Based object prediction\n### Texture Completion\n> Material Prediction / texture inpainting\n### Scene Completion\n> Room + object completion","x":500,"y":140,"width":420,"height":340}
 	],
 	"edges":[]
 }
