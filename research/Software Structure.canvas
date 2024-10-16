@@ -12,7 +12,7 @@
 		{"id":"f180166d08cecdd9","type":"text","text":"Scene Segmentation\n`SegmentationTools`","x":660,"y":-106,"width":220,"height":60},
 		{"id":"be38abb9274da9e9","type":"text","text":"Scene Generation\n`GenerationTools`","x":660,"y":23,"width":220,"height":60},
 		{"id":"456645ee8c967790","type":"text","text":"Dynamic Reality Model","x":340,"y":140,"width":240,"height":60},
-		{"id":"37391125cae5d90f","type":"text","text":"POST\n`add-session`","x":120,"y":-112,"width":156,"height":73}
+		{"id":"37391125cae5d90f","type":"text","text":"POST\n`add-session`","x":120,"y":-112,"width":180,"height":73}
 	],
 	"edges":[
 		{"id":"be821434dee90b31","fromNode":"c6699b4d8385ff5a","fromSide":"right","toNode":"24e0df4d69336e6b","toSide":"left"},
