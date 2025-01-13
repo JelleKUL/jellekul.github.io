@@ -74,46 +74,56 @@ IGARSS 2025
 
 
 ## Methodology
-- Detect and complete the object from a scene
+- Complete the object from a scene
 - Segment the object into its distinct parts
-- selecting the objects that need to be moved
-- find the parts that should be scaled
-	- interpolating the values of the SDF and colors
-### Object detection and completion
-We use the state-of the art method to detect the different partially scanned objects in the scene.
-The objects are completed as SDF's with Texture fields colors.
-- The SDF is discetised into a nxnxn voxel grid
+- selecting the parts that need to be moved
+- Interpolating the SDF, color and part index of the parts in the selection zone
+### Object Completion
+We use the state-of the art method (AUTO SDF) to complete the different partially scanned objects in the scene.
+The objects are completed as SDF's and the textures are completed on the sampled version of the SDF using "IF-Net-Texture"
+- The SDF is discretised into a $128x128x128$ voxel grid
 - The colours of the object are also discretized into a voxel array matching the SDF dimensions
 
 ### Part Detection
-- The object is divided in different parts using partnet dataset trained model. 
-- This is done by by performing a pointwise segmentation on the sampled SDF, where each point is a voxel-grid coordinate
+- We use a state-of-the-art method to detect the parts of the object (Cross shape attention (CSN))
+- The model performs a pointwise segmentation on the sampled SDF, where each point is a voxel-grid coordinate. The resulting labels are a semantic label indicating the part of the model.
+- The each seperate instance of the semantic labels is given a unique index by grouping all the points using a DBSCAN clustering algorithm.
 - The whole object is now defined by 3 values at each voxel coordinate:
 	- Distance to the surface
 	- Color at the nearest surface
 	- Part index at the nearest surface
 
-
 ### Scaling zone definition
+- Next is defining which parts of the object should be scaled/moved
+- The selection is made by defining 2 parallel planes to 
 - A planar selection is made of the desired scaling zone
 - This is done by creating 2 boundary planes for a given axis, the starting plane, and the ending plane. All the objects before the starting plane will remain in place, the objects in between the 2 planes are scaled proportionally. the objects behind the end plane are moved to the desired end position
 
-### SDF & Colour interpolation
-- The parts in between the 2 planes are isolated. 
-- The SDF gets discretized into a voxel array and the array is rescaled to match the new size
-- Smart scaling of repeating objects
-	- When an object is selected to be scaled. a maximum distortion factor can be applied.
-	- When the object gets distorted more than the max, the object is repeated instead, scaling it down to match the desired width.
-	- This also works for multiple parts simultaneously
-
+### SDF, Colour and Part Index Interpolation
+- The last plane is moved to a new location
+- The parts beyond the last plane are moved to the end location
+- The parts in between the 2 planes are isolated as a selection.
+- The parts before the first plane remain in place
+- The Selection is isolated and a new empty array is created that matches the new size of the new distance between the 2 planes.
+- There are 2 scaling modes
+	- Scale: The SDF, color and index values in the selection are linearly interpolated along the move axis to match the new size
+	- Repeat: The selection is repeated an $n$ amount of times depending on the length of the scaling factor. The repeating section is also scaled up/down to ensure the $n$ number of parts fit precisely in the new length. That scaling is also performed as a linear interpolation.
 
 ## Experiments
-- We tested our workflow on objects from the matterport dataset
+- We tested our workflow on objects from the matterport dataset.
+- The objects are isolated and completed, resulting 
 - We compared our smart scaling to regular object scaling
+	- We see clear distortion in parts that should not be scaled 
+
 - show results of texture and SDF repeating parts
 
 ## Conclusion
 - our method allows for object dynamification with context aware scaling. 
-- The one to one connection between the texturefield and SDF enables the dynamic scaling of object while retaining visual continuity
-- The SDF encoding allows for a smoother interpolation of the stretched parts without losing geometric detail
-- The patterned texture scaling ensures the patterns do not get distorted beyond an acceptable level
+- Strengths
+	- The one to one connection between the texturegrid and SDF enables the dynamic scaling of object while retaining visual continuity
+	- The SDF encoding allows for a smoother interpolation of the stretched parts without losing geometric detail
+	- The patterned texture scaling ensures the patterns do not get distorted beyond an acceptable level
+- Weaknesses
+	- Only scaling along the main grid axis is supported, however, the 3 axis can be chosen on an object-by-object basis to find the orientation for the desired transformation.
+	- Struggles with angled shapes because the stretching does not retain the angle of incidence.
+	- For very large deformations, the textures can become repetitive if the original selection size is not very big
