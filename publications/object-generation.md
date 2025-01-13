@@ -73,6 +73,8 @@ Uses sdf's to create and a selected zone for completion
 [ShapeFormer: Transformer-based Shape Completion via Sparse Representation](https://github.com/qheldiv/shapeformer)
 > transformer based 
 
+[PhysFiT: Physical-aware 3D Shape Understanding for Finishing Incomplete Assembly]
+> Part based completion
 ### Object texturing
 Uses spatially encoded textures in 3d space to give each point a distinct colour, lower resolution but better spatially aware 
 

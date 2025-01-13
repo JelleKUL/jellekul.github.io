@@ -1,7 +1,7 @@
 # Semantic UV Mapping to improve texture inpainting
 
 ## Introduction
-Current 2D texture inpainting methods struggle to perform well on reconstructed geometry due to the improper uv mapping of the scene and its objects
+Current 2D texture inpainting methods struggle to perform well on reconstructed geometry due to the improper uv-mapping of the scene and its objects
 - Context
 	- The AECO industry captures more and more data
 	- There is a need for empty indoor scenes without any holes.
@@ -80,6 +80,13 @@ Current 2D texture inpainting methods struggle to perform well on reconstructed 
 
 [No Shadow Left Behind](https://arxiv.org/abs/2012.10565)
 > 2d object removal and inpainting
+
+### Primitive fitting
+[Supervised Fitting of Geometric Primitives to 3D Point Clouds]()
+> Supervised Primitive Fitting Network (SPFN), an end-to-end neural network that can robustly detect a varying number of primitives at different scales without any user control.
+
+[RANSAC]()
+> primitive detection
 ### Semantic unwrapping
 [GraphSeam 2020](https://www.researchgate.net/publication/346475280_GraphSeam_Supervised_Graph_Learning_Framework_for_Semantic_UV_Mapping)
 > we use the power of supervised GNNs for the first time to propose a fully automated UV mapping framework that enables users to replicate their desired seam styles while reducing distortion and seam length.
@@ -109,6 +116,9 @@ Current 2D texture inpainting methods struggle to perform well on reconstructed 
 [Free-Form Surface Texture Inpainting Using Graph Neural Networks](https://github.com/johnpeterflynn/surface-texture-inpainting-net)
 >We present the Surface Texture Inpainting Network (STINet), a graph neural network-based model that generates complete surface texture for partially textured 3D meshes. In contrast to 2D image inpainting which focuses on predicting missing pixel values on a fixed regular grid, STINet aims to inpaint color information on mesh surfaces of varying geometry and topology. STINet learns from spatial information such as vertex positions and normals as well as mesh connectivity to effectively predict vertex color.
 
+[Free-form 3D Scene Inpainting with Dual-stream GAN](https://github.com/ruby2332ruby/Free-form-3D-Scene-Inpainting?tab=readme-ov-file)
+> a tailored dual-stream GAN method is proposed. First, our dual-stream generator, fusing both geometry and color information, produces distinct semantic boundaries and solves the interpolation issue. To further enhance the details, our lightweight dual-stream discriminator regularizes the geometry and color edges of the predicted scenes to be realistic and sharp.
+
 [Automatic Defurnishing of indoor panoramas 2024](https://matterport.github.io/automatic-defurnishing-of-indoor-panoramas/)
 >A pipeline that leverages Stable Diffusion to improve inpainting results in the context of defurnishing---the removal of furniture items from indoor panorama images. Specifically, we illustrate how increased context, domain-specific model fine-tuning, and improved image blending can produce high-fidelity inpaints that are geometrically plausible without needing to rely on room layout estimation. We demonstrate qualitative and quantitative improvements over other furniture removal techniques.
 
@@ -117,9 +127,15 @@ Current 2D texture inpainting methods struggle to perform well on reconstructed 
 ## Methodology
 ### Scene segmentation
 static and dynamic objects are detected using a semantic instance segmentation. The dynamic objects are removed from the scene this results in large holes in the remaining static elements.-
-- Use "" to segment the scene, the segmentation serves 2 purposes: 
+- Use "PointCept PTV3" to segment the scene, the segmentation serves 2 purposes: 
 	- first to distinguish the loose objects from the rest of the scene
 	- second, the find the different structural elements
+		- walls, floors, ceilings
+		- use ransac to find the different planes
+		- Use the detected windows and doors to preserve holes
+	- segment the scene into the 20 semantic labels.
+		- then separate the different clusters using DB clustering algorithm to define the loose objects
+		- create aligned bounding boxes per loose object 
 ### Geometric reconstruction
 The loose objects are removed from the scene, resulting in large holes
 - A bounding box is created for each object, this ensures a clean cut between the meshes and highlights the boundary edges for easier completion
@@ -131,13 +147,23 @@ In order to properly paint the textures in, we need an undistorted uv projection
 - each segmented object is presumed to be one inpaintable material
 	- if this is not the case we use the texture-based mesh refinement to separate them further.
 - Each structural element is also projected with z/y up to ensure texture continuity in the next part
+- we ensure there is no distortion per object plane, essential for accurate 2D inpainting
 ### Texture reconstruction
 Texture in the newly generated geometry is inpainted using the surrounding faces of the same instance as reference areas.
-- Each object is mapped separatly
+- Each object is mapped separately
+- the reconstructed regions are marked for inpainting
 - each segmented label serves as a reference mask for the inpainting algorithm
 ## Experiments
 ### Datasets Used
 Use the scannet and matterport dataset, they contain semantically labeled indoor scenes that can be used for 
+
+### Comparisons
+Which methods try to do the same thing?
+- Free-form 3D scene inpainting
+- view based inpainting
+	- dependant on lighting conditions
+	- difficult to align with view and get coverage
+
 ### Object detection and removal
 The object in the scene are detected and removed, leading to large holes in the scenes.
 > show examples of the before and after

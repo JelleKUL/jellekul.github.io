@@ -59,7 +59,7 @@ Uses sdf's to create and a selected zone for completion
 > Our method trains a hierarchy of latent diffusion models over a hierarchy of sparse voxel grids ={G1,...,GL}. Our model first trains a **sparse structure VAE** which learns a compact latent representation for each level of the hierarchy. We then train a latent diffusion model to generate each level of the hierarchy conditioned on the coarser level above it. At inference time, we simply run each diffusion model in a cascaded fashion from coarse to fine to generate novel shapes and scenes. By leveraging the decoder of the sparse structure VAE at inference time, our generated high-resolution voxel grids additionally contain various attributes, such as normals and semantics, which can be used in down-stream applications.
 ### Environment Aided Completion
 
-[Where Does It End? - Reasoning About Hidden Surfaces by Object Intersection Constraints](https://cosection.is.tue.mpg.de/)
+[Co-Section - Where Does It End? - Reasoning About Hidden Surfaces by Object Intersection Constraints](https://cosection.is.tue.mpg.de/)
 > 2020
 > An optimization-based approach to 3D dynamic scene reconstruction, which infers hidden shape information from intersection constraints.
 > Uses the scene to limit object completion
@@ -82,6 +82,10 @@ Uses sdf's to create and a selected zone for completion
 > 2014
 > Partial 3D models
 > Uses local extrema to find corresponding symmetry points and aligns the partial mesh
+
+[Partial and Approximate Symmetry Detection for 3D Geometry]
+> 2006
+> a new algorithm that processes geometric models and efficiently discovers and extracts a compact representation of their Euclidean symmetries.
 
 [SymmetryNet](https://github.com/GodZarathustra/SymmetryNet)
 > 2020

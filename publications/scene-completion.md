@@ -135,6 +135,11 @@
 [Surface texture inpainting](https://github.com/johnpeterflynn/surface-texture-inpainting-net)
 > We present the Surface Texture Inpainting Network (STINet), a graph neural network-based model that generates complete surface texture for partially textured 3D meshes. In contrast to 2D image inpainting which focuses on predicting missing pixel values on a fixed regular grid, STINet aims to inpaint color information on mesh surfaces of varying geometry and topology. STINet learns from spatial information such as vertex positions and normals as well as mesh connectivity to effectively predict vertex color.
 
+### Texture Generation
+
+[TEXGen](https://cvmi-lab.github.io/TEXGen/)
+>  we train a large diffusion model capable of directly generating high-resolution texture maps in a feed-forward manner. To facilitate efficient learning in high-resolution UV spaces, we propose a scalable network architecture that interleaves convolutions on UV maps with attention layers on point clouds.
+
 ## Methodology
 
 ### Implicit Scene generation
