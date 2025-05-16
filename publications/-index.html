@@ -1,0 +1,24 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+base_path: publications
+---
+
+<h1>{{ page.title }}</h1>
+
+<p>
+    Here is a list of all my recent publications.
+    On each individual page, you can also find a link to the sourcecode on Github and the paper.
+</p>
+
+<ul class="category-list">
+  {% assign match_url = '/' | append: page.base_path | append: '/' %}
+  {% assign items = site.pages | where_exp: "p", "p.url contains match_url" %}
+  {% assign sorted = items | sort: "date" %}
+  {% for item in sorted reversed %}
+    {% if item.url != match_url %}
+      {% include research_card.html %}
+    {% endif %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="post">
+
+    <div class="row">
+            <p>{{ page.date | date: "%b %-d, %Y" }}</p>
+            <p>
+                
+                {% if page.githublink != "" %}
+                <a class="btn" target = "_blank" href="{{ page.githublink }}">Code</a>
+                {%endif%}
+                {% if page.doilink != "" %}
+                <a class="btn" target = "_blank" href="{{ page.doilink }}">Paper</a>
+                {%endif%}
+            </p>
+            
+                
+    </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+</article>
+

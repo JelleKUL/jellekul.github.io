@@ -1,0 +1,18 @@
+<li class="category-item" href="{{ item.url | relative_url }}">
+  <a href="{{ item.url | relative_url }}" class = "flex-card">
+      <div>
+    {% if item.image %}
+      <img src="{{ item.image | relative_url }}" alt="{{ item.title }} thumbnail" class="thumb">
+    {% else %}
+      <img src="/img/default.png">
+    {% endif %}
+    </div>
+    <div>
+      <p class="center-with-lines"><span>{{item.type}}</span></p>
+    </div>
+    <div>{{ item.title }}</div>
+
+    
+  </a>
+  <div class = "muted">{{ item.date | date: "%b %-d, %Y" }}</div>
+</li>

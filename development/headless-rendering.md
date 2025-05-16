@@ -1,3 +1,9 @@
+---
+layout: page
+title: Headless Rendering
+permalink: /development/headlessrendering/
+---
+
 # Headless Rendering
 
   

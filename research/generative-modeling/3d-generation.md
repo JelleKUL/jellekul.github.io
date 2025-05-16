@@ -39,7 +39,7 @@ Generally created with an auto encoder.
 
 ## Image based 3D diffusion
 
-![image](dreamfusionImage.png)
+![image](img/dreamfusionImage.png)
 
 Using 2d diffusion to generate multiple viewpoints of a 3D object and using Nerfs to render the full 3D object
 

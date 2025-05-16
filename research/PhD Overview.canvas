@@ -10,7 +10,7 @@
 		{"id":"2bda4606a2e1a63d","type":"text","text":"## XR Data Capture\n### Data Capture\n> Capture images and 3D meshes\n### Data Storage\n>RDF based data standardisation\n### Data Creation\n> Synthetic data creation using virtual scanners","x":-540,"y":-220,"width":420,"height":340},
 		{"id":"db6fd56c1d37460d","type":"text","text":"## AlignmentTools\n### 2D Matching\n> Using Images to align 2 datasets\n### 3D Matching\n> Using meshes/pointclouds\n### Pose Voting\n> Interpolating the best estimated pose","x":-20,"y":-220,"width":420,"height":340},
 		{"id":"87b65750cd2fcca8","type":"text","text":"## CombinationTools\n### Point cloud combination\n> Combining old with newer point cloud\n### Mesh Combination\n> Combining triangles and textures","x":-20,"y":140,"width":420,"height":340},
-		{"id":"8e0a7ec7f313eab5","type":"text","text":"## InteractionTools\n### Voxel guided completion\n\n### Voxel guided Transformations","x":-540,"y":140,"width":420,"height":340},
+		{"id":"8e0a7ec7f313eab5","type":"text","text":"## InteractionTools\n### Voxel guided completion\n> Improving object completion through voxels\n\n### Voxel guided Transformations\n> Using voxel SDF's for easy transformations","x":-540,"y":140,"width":420,"height":340},
 		{"id":"2ba958bad3f8a270","type":"text","text":"### DRM","x":500,"y":-300,"width":200,"height":50,"color":"1"},
 		{"id":"41af778bb903d9b5","type":"text","text":"### Python","x":720,"y":-300,"width":140,"height":50,"color":"6"},
 		{"id":"1c7ec99f4e943ae8","type":"text","text":"## SegmentationTools\n### Object detection\n> Deep learning bounding box detection\n### Texture refinement\n> Texture based mesh refinement\n### Semantic UV wrapping\n> mesh to uv based on type","x":500,"y":-220,"width":420,"height":340},

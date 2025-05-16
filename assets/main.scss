@@ -1,0 +1,103 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  margin-top: 3rem;
+}
+a {
+  color: #1055a9;
+}
+
+.btn {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    color: #222 !important;
+    font-size: 16px;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: box-shadow 0.2s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    letter-spacing: 1px;
+    margin-right: 8px;
+    padding: 4px 4px;
+    width: 100px;
+    font-weight: 400;
+}
+
+.btn:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.muted{
+  //display: inline-block;
+  padding-top: 5px;
+  font-size: 0.75rem;
+  color: #606060;
+  margin-top: auto;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.category-item {
+  border: 1px solid #ddd;
+  color: #222 !important;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: left;
+  background: #fafafa;
+  transition: box-shadow 0.2s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.category-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-item img.thumb {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.center-with-lines {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #606060;
+  font-size: 0.75rem;
+}
+
+.center-with-lines::before,
+.center-with-lines::after {
+  content: "";
+  flex: 1;
+  height: 0.05rem;
+  background: #606060;
+}
+
+.center-with-lines::before {
+  margin-right: 10px;
+}
+
+.center-with-lines::after {
+  margin-left: 10px;
+}

@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+
+<ul class="category-list">
+  {% assign match_url = '/' | append: page.base_path | append: '/' %}
+  {% assign items = site.pages | where_exp: "p", "p.url contains match_url" %}
+  {% assign sorted = items | sort: "date" %}
+  {% for item in sorted reversed %}
+    {% if item.url != match_url %}
+      <li class="category-item">
+        <a href="{{ item.url | relative_url }}">
+          <div>{{ item.title }}</div>
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
