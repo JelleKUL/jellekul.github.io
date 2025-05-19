@@ -8,20 +8,41 @@ layout: default
             <p>{{ page.date | date: "%b %-d, %Y" }}</p>
             <p>
                 
-                {% if page.githublink != "" %}
+                {% if page.githublink %}
                 <a class="btn" target = "_blank" href="{{ page.githublink }}">Code</a>
                 {%endif%}
-                {% if page.doilink != "" %}
+                {% if page.doilink %}
                 <a class="btn" target = "_blank" href="{{ page.doilink }}">Paper</a>
                 {%endif%}
             </p>
             
                 
     </div>
+    <div>
+      <h1>{{page.title}}</h1>
+      <h2>Abstract</h2>
+      <p>
+        {{page.description}}
+      </p>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+      {% if page.methodImage %}
+      <h2>Workflow</h2>
+      <img src="{{ page.methodImage | relative_url }}" alt="{{ page.title }} workflow" class="thumb">
+      {% endif %}
+
+      {% if page.resultImage %}
+      <h2>Results</h2>
+      <img src="{{ page.resultImage | relative_url }}" alt="{{ page.title }} results" class="thumb">
+      {% endif %}
+
+    </div>
+
+    <div>
+      {% if page.bibtex %}
+      <h2>Bibtex</h2>
+      <code>{{page.bibtex}}</code>
+      {%endif%}
+    </div>
 
 </article>
 

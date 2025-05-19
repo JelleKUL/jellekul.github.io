@@ -1,26 +1,43 @@
 ---
-layout: page
+layout: publication
 title: Semantic UV Mapping to Improve Texture Inpainting
 date: 2024-09-12
 permalink: /publications/semantic-uv-mapping/
-image: "/img/research/Semantic UVMapping.png"
+icon: "/img/icons/Semantic UVMapping.png"
+methodImage: "img/publications/SemanticUVMapping Methodology.png"
+resultImage: "img/publications/semantic-uvmapping-results.png"
 doilink: "https://doi.org/10.2312/cgvc.20241221"
 githublink: "https://github.com/JelleKUL/generationtools"
 objective: 2
 type: Conference
 
 description: This work aims to improve texture inpainting after clutter removal in scanned indoor meshes. This is achieved with a new UV mapping pre-processing step which leverages semantic information of indoor scenes to more accurately match the UV islands with the 3D representation of distinct structural elements like walls and floors.
+
+bibtex: |
+ @inproceedings{10.2312:cgvc.20241221,
+ booktitle = {Computer Graphics and Visual Computing (CGVC)},
+ editor = {Hunter, David and Slingsby, Aidan},
+ title = {{Semantic UV Mapping to Improve Texture Inpainting for 3D Scanned Indoor Scenes}},
+ author = {Vermandere, Jelle and Bassier, Maarten and Cuypers, Suzanna and Vergauwen, Maarten},
+ year = {2024},
+ publisher = {The Eurographics Association},
+ ISBN = {978-3-03868-249-3},
+ DOI = {10.2312/cgvc.20241221}
+ }
+        
+
+
 ---
 
 # Semantic UV Mapping to Improve Texture Inpainting
 
- <img class="img-fluid  rounded vis-img" src="../../img/research/semanticuv-methodology.pdf" alt="{{page.title}}">
+ <img class="img-fluid  rounded vis-img" src="../../img/publications/SemanticUVMapping Methodology.png" alt="{{page.title}}">
 
 <h3 class="text-primary">
   Matterport3D Results
 </h3>
 
- <img class="img-fluid  rounded vis-img" src="../../img/research/semantic-uvmapping-results.png" alt="{{page.title}}">
+ <img class="img-fluid  rounded vis-img" src="../../img/publications/semantic-uvmapping-results.png" alt="{{page.title}}">
 
 ## Introduction
 Current 2D texture inpainting methods struggle to perform well on reconstructed geometry due to the improper uv-mapping of the scene and its objects

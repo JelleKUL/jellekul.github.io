@@ -1,7 +1,7 @@
 ---
 layout: publication
 title: Dynamic Reality Model
-permalink: /research/drm/
+permalink:
 ---
 
 # Dynamic Reality Model

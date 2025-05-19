@@ -3,7 +3,8 @@ layout: publication
 title: Guided object completion with interactive voxel editing
 date: 2025-04-12
 permalink: /publications/voxel-editor/
-image: "img/research/Voxel Generation.png"
+icon: "img/icons/Voxel Generation.png"
+methodImage: "img/publications/voxel-editor-method.png"
 doilink: 
 githublink: "https://github.com/JelleKUL/geosharpi"
 objective: 3

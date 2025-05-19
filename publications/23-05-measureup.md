@@ -3,7 +3,7 @@ layout: publication
 title: "MEASURE UP: A SERIOUS GAME FOR TOPOGRAPHIC EDUCATION"
 date: 2023-05-23
 permalink: /publications/measureup/
-image: "/img/research/MeasureUpLogo.png"
+icon: "/img/icons/MeasureUpLogo.png"
 doilink: "https://doi.org/10.5194/isprs-annals-x-5-w1-2023-69-2023"
 githublink: "https://github.com/JelleKUL/KULeuven-Game"
 objective: -1
@@ -11,7 +11,17 @@ type: Conference
 
 description: This Game was designed to help students understand the more practical field exercises. By allowing them to practice before and after the actual field tests, they can get a better grasp of the material.
 
-
+bibtex: |
+ @article{vermandere2023measure,
+  title = {Measure Up: a Serious Game for Topographic Education},
+  author = {Vermandere, Jelle and Bassier, Maarten and Vergauwen, Maarten},
+  journal = {ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  volume = {10},
+  pages = {69--74},
+  year = {2023},
+  publisher = {Copernicus Publications},
+  doi = {10.5194/isprs-annals-X-5-W1-2023-69-2023},
+ }
 ---
 
 <!-- Examples

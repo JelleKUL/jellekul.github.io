@@ -3,7 +3,8 @@ layout: publication
 title: "Texture-based Separation to Refine Building Meshes"
 date: 2023-09-07
 permalink: /publications/texture-mesh-refinement/
-image: "/img/research/Mesh Texturing.png"
+icon: "/img/icons/Mesh Texturing.png"
+methodImage: "img/publications/Texture-refinement-method.png"
 doilink: "https://doi.org/10.5194/isprs-annals-X-1-W1-2023-479-2023"
 githublink: "https://github.com/JelleKUL/generic-segmentation-tools"
 objective: 2
@@ -11,7 +12,17 @@ type: Conference
 
 description: We present a texture-based separation approach to refine building meshes, which aims to address the challenges of detecting and isolating different objects in an indoor scene mesh. We propose a novel segmentation model based on the materials of the different parts of the scene. The proposed approach uses factorization-based texture segmentation to separate the different materials in the meshes and detect the edges on the segmented texture.
 
-
+bibtex: |
+ @article{vermandere2023texture,
+  title={Texture-Based Separation to Refine Building Meshes},
+  author={Vermandere, Jelle and Bassier, Maarten and Vergauwen, Maarten},
+  journal={ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences},
+  volume={10},
+  pages={479--485},
+  year={2023},
+  publisher={Copernicus GmbH},
+  dio = {10.5194/isprs-annals-X-1-W1-2023-479-2023}
+ }
 ---
 
 <!-- Examples

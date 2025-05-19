@@ -1,8 +1,8 @@
 <li class="category-item" href="{{ item.url | relative_url }}">
   <a href="{{ item.url | relative_url }}" class = "flex-card">
       <div>
-    {% if item.image %}
-      <img src="{{ item.image | relative_url }}" alt="{{ item.title }} thumbnail" class="thumb">
+    {% if item.icon %}
+      <img src="{{ item.icon | relative_url }}" alt="{{ item.title }} icon" class="thumb">
     {% else %}
       <img src="/img/default.png">
     {% endif %}
@@ -14,5 +14,5 @@
 
     
   </a>
-  <div class = "muted">{{ item.date | date: "%b %-d, %Y" }}</div>
+  <div class = "muted">{{ item.date | date: "%b, %Y" }}</div>
 </li>

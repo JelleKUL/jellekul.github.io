@@ -3,13 +3,29 @@ layout: publication
 title: Geometry and texture completion of partially scanned 3d objects
 date: 2025-02-26
 permalink: /publications/geometry_and_texture_completion
-image: "/img/research/Geometry Generation.png"
+icon: "/img/icons/Geometry Generation.png"
+methodImage: "img/publications/ObjectCompletion Methodology.png"
+resultImage: 
 doilink: "https://doi.org/10.5220/0013120000003912"
 githublink: "https://github.com/JelleKUL/generationtools"
 objective: 2
 type: Conference
 
 description: This work aims to improve the geometry and texture completion of partially scanned 3D objects in indoor environments by identifying limitations in existing completion techniques, including a lack of material awareness, insufficient fine detailing methods, and a scarcity of textured 3D object datasets. A novel completion pipeline is proposed that improves both the geometry and texture completion process.
+
+bibtex: |
+ @conference{grapp25,
+ author={Jelle Vermandere and Maarten Bassier and Maarten Vergauwen},
+ title={Geometry and Texture Completion of Partially Scanned 3D Objects Through Material Segmentation},
+ booktitle={Proceedings of the 20th International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications - GRAPP},
+ year={2025},
+ pages={193-202},
+ publisher={SciTePress},
+ organization={INSTICC},
+ doi={10.5220/0013120000003912},
+ isbn={978-989-758-728-3},
+ issn={2184-4321},
+ }
 ---
 
 # Geometry and texture completion of partially scanned 3d objects
