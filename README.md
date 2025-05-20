@@ -16,9 +16,6 @@ My main research centers around innovating the built environment through Reality
 
 All my recent publications are listed here.
 
-## [Research](/research)
-
-All my ongoing research and unpublished thoughts are listed here.
 
 ## [Development](/development)
 

@@ -12,13 +12,19 @@ base_path: publications
     On each individual page, you can also find a link to the sourcecode on Github and the paper.
 </p>
 
-<ul class="category-list">
-  {% assign match_url = '/' | append: page.base_path | append: '/' %}
-  {% assign items = site.pages | where_exp: "p", "p.url contains match_url" %}
-  {% assign sorted = items | sort: "date" %}
-  {% for item in sorted reversed %}
+{% assign match_url = '/' | append: page.base_path | append: '/' %}
+{% assign items = site.pages | where_exp: "p", "p.url contains match_url" %}
+{% assign publications_by_year = items | group_by_exp:"post", "post.date | date: '%Y'" %}
+
+{% for year in publications_by_year reversed%}
+{% if year.name != nil %}
+  <h2 class = "center-with-lines">{{year.name}}</h2>
+  <ul class="category-list">
+  {% for item in year.items %}
     {% if item.url != match_url %}
       {% include research_card.html %}
     {% endif %}
   {% endfor %}
-</ul>
+  </ul>
+  {% endif %}
+{% endfor %}
