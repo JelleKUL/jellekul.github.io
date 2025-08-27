@@ -1,19 +1,11 @@
-define value chain
-minder inventariseren, meer digitaliseren
-- 2de hands meubels visualiseren
-- bestaande objecten en materialen hergebruiken
-- gaming environment maken van bestaande omgeving
-	- steeds meer realistisch
+---
+marp: true
+paginate: true
+headingDivider: 4
+---
 
-#### Voorbeelden
-https://www.pierredevalck.be/
-- 3d scannen van stenen en verwerken in meubels
-https://www.onbetaalbaar.com/
-- het ontwerp en de uitvoering van grote ruimtelijke projecten op basis van hergebruik, circulaire materialen en duurzame grondstoffen.
-https://www.martinogamper.com/project/a-100-chairs-in-a-100-days/
-- Elke dag een nieuwe stoel op basis van onderdelen van andere stoelen
-https://rotordc.com/aboutus-1
-- We are a cooperative that organises the reuse of construction materials. We dismantle, process and trade salvaged building components (from hardware and chairs to ceramic tiles and doors).
+# Dynamic Digitisation for Upcycling
+
 ## Doel:
 Meerjarig IOF project om de samenwerking tussen de campussen te verhogen. 
 "Samenwerking in onderzoek, en op die manier misschien werken aan een gezicht voor Gent" - Peter Hanselaer
@@ -26,6 +18,7 @@ Kunst - Architectuur - Ingenieur
 - 3D scannen voor adaptive reuse in architectuur
 
 ## IOF
+Internal research fund to foster collaboration between colleges and universities.
 https://research.kuleuven.be/gedocumenteerd/en/41568
 https://www.ewi-vlaanderen.be/onze-opdracht/excellerend-onderzoek/financiering-van-onderzoek/industrieel-onderzoeksfonds
 parameters:
@@ -71,6 +64,97 @@ https://www.kuleuven.be/industrieelonderzoeksfonds/parameters.html
     - 4: **documented collaboration & predefined outputs.**
 - Report due within 1 month after project end.
 
+
+
+## Application
+*Het gebruik van dynamische digitale modellen voor gebruik in reuse en upcycling van materialen en objecten in context van design, interieur en architectuur.*
+
+- 2 jarig project (met potentiële verlenging van 2 jaar)
+
+#### Naam:
+- Reduce, Reuse, Remodel
+- Digital Upcycling
+- DI-UP / Digi - Up
+- d.d.u.
+- Object Digitisation Upcycling
+- 
+
+### Context
+- Construction and demolition waste (CDW) accounts for about ***1/3 of all waste*** produced in the EU [DDC](https://vb.nweurope.eu/projects/project-search/digital-deconstruction/#tab-1).
+- In **Belgium**, about **96%** of construction and demolition waste is Currently being recycled. Mostly via crushing, melting, or other **downcycling** processes [cemonitor.be](https://cemonitor.be/en/indicator/housing/desired-changes/recycling-rate-of-building-materials/).
+- However, only a **tiny fraction (3%)** of recycled building elements are **actually reused as intact components** that retain their technical, cultural, or economic value [sharedcities.eu](https://www.sharedcities.eu/material/972/), [Gobbo, Emilie ; et. al.](https://doi.org/10.1016/j.jobe.2024.111344).
+- Poor digitalization of the construction sector is one of the key factors hindering better exploitation of circular opportunities [DDC](https://vb.nweurope.eu/projects/project-search/digital-deconstruction/#tab-1).
+
+### Problem
+- Precious Architectural and designed **objects** are too often **downcycled** and **loose a lot of their value**.
+- The objects are **poorly documented** and are introduced **too late** into the design process.
+
+### Current Approaches
+#### [Rotor-DC](https://rotordc.com/aboutus-1)
+> a cooperative that organises the reuse of construction materials. We dismantle, process and trade salvaged building components (from hardware and chairs to ceramic tiles and doors)
+> ![[rotorDC.png]]
+
+#### [Atelier Circuler](https://ateliercirculer.be/materialenbank/)
+> De Materialenbank Leuven, onderdeel van Atelier Circuler vzw, zet zich in voor het **hergebruik van bouwmaterialen**. Samen met diverse partners en de sociale tewerkstellingsorganisatie Wonen en Werken vzw geven we waardevolle materialen een nieuw leven. Ons assortiment omvat **een breed scala aan gerecupereerde hout- en steenfracties**, te vinden in onze onlinecatalogus.
+> ![[Pasted image 20250826121052.png]]
+
+#### [Onbetaalbaar](https://www.onbetaalbaar.com/)
+> Het ontwerp en de uitvoering van grote ruimtelijke projecten op basis van hergebruik, circulaire materialen en duurzame grondstoffen.
+> ![[Pasted image 20250814155525.png]] 
+
+#### [Pierre De Valck](https://www.pierredevalck.be/)
+> 3d scannen van stenen en verwerken in meubels
+> ![[Pasted image 20250814160142.png]]
+
+#### [Martino Gamper](https://www.martinogamper.com/project/a-100-chairs-in-a-100-days/)
+> Elke dag een nieuwe stoel op basis van onderdelen van andere stoelen
+> ![[Pasted image 20250814160409.png]]
+
+### Proposed Solution
+*Improve upcycling through **better digitisation** of building elements.*
+- By creating **3D digital models** of deconstructed materials, you preserve exact geometries, conditions, and identities, enabling architects, designers, and builders to explore reuse possibilities earlier in the design process.
+- Leveraging **3D scanning** and **imagery** for quick capture, complemented by state-of-the-art **object completion networks** to create a full 3D model
+#### Engineering
+- Leveraging the acquired knowledge about object completion and scene reconstruction to develop new technologies.
+#### Architecture
+- Incorporating objects and materials early in the design process, plans, BIM models, renders...
+- [Parametric architecture](https://parametric-architecture.com/building-a-sustainable-environment-a-guide-to-adaptive-reuse-architecture/?srsltid=AfmBOoo7X8iSao_VCNxLdx4pT-OaUCWR64CYne0Kg1n017krfpBeR1cr)
+
+#### Arts
+- Exploring new ways to use the objects or parts of the objects in a digital, non-destructive way
+
+## Technology
+#### Single view 3D reconstruction
+- Single view reconstruction aims to create a full 3D model of an object with only a single RGB image as input.
+![[Pasted image 20250826161754.png]]
+- Single-view neural implicit Shape and Radiance field (SSR)
+![[featured_hu5413116640552451793.webp]]
+#### Partial scan completion
+- Partial scan completion uses either pointclouds or meshes as input and predicts the occlusions within
+![[Pasted image 20250826162137.jpg]]
+#### Part segmentation
+- 3D objects often contain multiple parts, in Part segmentation, the network aims to find 
+![[Pasted image 20250826163014.png]]
+
+### 
+
+
+define value chain
+minder inventariseren, meer digitaliseren
+- 2de hands meubels visualiseren
+- bestaande objecten en materialen hergebruiken
+- gaming environment maken van bestaande omgeving
+	- steeds meer realistisch
+- grootte markt definieren
+	- hoeveel reuse is er?
+	- vertrekken vanuit valorisatie
+- wat zijn de kernproblemen?
+- verkennend kader opzetten
+- https://www.google.com/search?q=design+thinking&oq=design+thinking&gs_lcrp=EgZjaHJvbWUyCQgAEEUYORiABDIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIMCAcQABgUGIcCGIAEMgcICBAAGIAEMgcICRAAGIAE0gEIMzQwMGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8
+
+- de ontwerper
+- cocreatieprocess
+- dubble diamond
 ## Interesses:
 - 3D scanning
 - Generative modeling
@@ -78,80 +162,8 @@ https://www.kuleuven.be/industrieelonderzoeksfonds/parameters.html
 - Dynamic environments (gaming)
 - Animation
 - Visualisations
-
-## Ideas:
-
-How do we build more sustainably?
-- Reduce new material usage
-	- Build less new stuff
-	- reduce errors in the process
-- Reuse existing materials
-	- more renovations
-	- build more modularly
-	- reuse used (non) structural elements
-- Recycle
-	- better separate destroyed buildings
-	- use more 
-### Personalized virtual architecture (Reduce)
-Use XR technologies to personalise a space. Reducing every object to its physical baseform and applying a virtual overlay to all the objects and environment.
-- xr to change visuals
-- placeholder physical items that update the digital world
-Research in physical base forms with infinite variations and combatting "fast-architecture" (analogous to "fast-fashion") by eliminating the need for wasteful physical manufacturing.
-### Building dynamification & parts invertory (Reuse)
-To reduce the use of new materials and objects for renovations, we could use a digital twin of the existing building to create a dynamic testing ground. 
-- 3D scanning of the building (engineering)
-- Room dynamification using DRM (dynamic reality modeling)
-- build a spatial database from objects within (previous) scans (architecture)
-	- furniture, but also structural elements
-- change the objects (kitbashing, recoloring) (arts)
-	- break objects down to their components
-- design virtually using available elements (arts & architecture)
-Use state-of-the-art technologies to virtualize the design process on site. 
-
-
-### Lichtfestival Gent
-- January 2027
-- De vele campussen vormen goede uitvalsbasis collectief met studenten
-- duurzame renovaties oude gevels van Gent
-- Nieuwe invullingen projecteren
-
-## Contactpersonen:
+## Contacts:
 Corneel Cannaerts [corneel.cannaerts@kuleuven.be](mailto:corneel.cannaerts@kuleuven.be)  
 Gilles Callebaut [gilles.callebaut@kuleuven.be](mailto:gilles.callebaut@kuleuven.be)
 Creative makers [https://creativemakers.xyz/](https://creativemakers.xyz/)
 Design for Impact https://www.luca-arts.be/en/design-impact
-
-
-## Uitwerking
-*Het gebruik van dynamische digitale modellen voor gebruik in reuse en upcycling van materialen en objecten  in context  van design, interieur en architectuur.*
-
-- 2 jarig project (met potentiële verlenging van 2 jaar)
-
-### Probleem
-In de context van duurzaam bouwen en leven kijken we hoe de verloren objecten na vernieuwingen een tweede leven kunnen geven.
-Enkele bedrijven zetten hier al op in:
-
-[Rotor-DC](https://rotordc.com/aboutus-1)
-> a cooperative that organises the reuse of construction materials. We dismantle, process and trade salvaged building components (from hardware and chairs to ceramic tiles and doors)
-> ![[Pasted image 20250814155428.png]]
-
-[Onbetaalbaar](https://www.onbetaalbaar.com/)
-> Het ontwerp en de uitvoering van grote ruimtelijke projecten op basis van hergebruik, circulaire materialen en duurzame grondstoffen.
-> ![[Pasted image 20250814155525.png]]
-
-[Pierre De Valck](https://www.pierredevalck.be/)
-> 3d scannen van stenen en verwerken in meubels
-> ![[Pasted image 20250814160142.png]]
-
-[Martino Gamper](https://www.martinogamper.com/project/a-100-chairs-in-a-100-days/)
-> Elke dag een nieuwe stoel op basis van onderdelen van andere stoelen
-> ![[Pasted image 20250814160409.png]]
-
-
-## Technologie
-
-#### Single view 3D reconstruction
-
-#### Partial scan completion
-
-#### Part segmentation
