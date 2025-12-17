@@ -102,6 +102,9 @@ https://www.kuleuven.be/industrieelonderzoeksfonds/parameters.html
 > Het ontwerp en de uitvoering van grote ruimtelijke projecten op basis van hergebruik, circulaire materialen en duurzame grondstoffen.
 > ![[Pasted image 20250814155525.png]] 
 
+### [Design and Make program at the Architectural Association](https://www.linkedin.com/posts/raamt_the-datum-investigates-accessibility-in-both-activity-7368348386032336898-uQ3U?utm_source=share&utm_medium=member_desktop&rcm=ACoAABFxLjQBsxUK0pTnwbcrCxaGJx_Cr3M_qWY)
+> 3D analysis of wood offcuts for construction
+> ![[1756751108417.jpg]]
 #### [Pierre De Valck](https://www.pierredevalck.be/)
 > 3d scannen van stenen en verwerken in meubels
 > ![[Pasted image 20250814160142.png]]

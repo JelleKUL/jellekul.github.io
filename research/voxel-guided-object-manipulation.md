@@ -1,18 +1,21 @@
-# Voxel Guided Object Manipulation
+# Completed object dynamification
 
-IGARSS 2025
+PE&RS 2025
+## Scope:
+*Introducing part segmentation on a completed SDF to enable part-aware scaling and repetition*
 ## Introduction
 
 - Dynamic objects in indoor scenes are needed for industry
 	- Indoor renovations in AECO
 	- Simulations (light, smoke,...)
 	- Gaming environments
-- Objects captured in environments are static and cannot be scaled without unwanted distortions
+- Objects completed from partial scans are static and cannot be scaled without unwanted distortions
 - There is a need for selective and proportion-retaining scaling by only scaling certain parts of the object
 -  Current part aware object scaling is used in the games industry for procedural large scale object generation on meshes, but require a database of existing modular parts.
 - A lot of the object detection and completion pipelines use SDF's as outputs
 	- These are implicit definitions and define an object boundary
 	- The texture can be made implicit (texture fields) as well creating a direct link between the distance to the surface and the colour at the surface at any point in space.
+	- This creates a opportunity for spatial transformation in a parametric way.
 - Our method
 	- Divide the completed object from the scene into parts
 	- interpolates the sdf and colour values between scaled boundaries
@@ -85,7 +88,7 @@ The objects are completed as SDF's and the textures are completed on the sampled
 - The colours of the object are also discretized into a voxel array matching the SDF dimensions
 
 ### Part Detection
-- We use a state-of-the-art method to detect the parts of the object (Cross shape attention (CSN))
+- We use a state-of-the-art method to detect the parts of the object (Cross shape attention (CSN)(https://github.com/marios2019/CSN)
 - The model performs a pointwise segmentation on the sampled SDF, where each point is a voxel-grid coordinate. The resulting labels are a semantic label indicating the part of the model.
 - The each seperate instance of the semantic labels is given a unique index by grouping all the points using a DBSCAN clustering algorithm.
 - The whole object is now defined by 3 values at each voxel coordinate:

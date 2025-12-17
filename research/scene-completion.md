@@ -36,6 +36,36 @@
 - Semantic unwrapping
 - Texture reconstruction 
 
+### Single view object reconstruction
+
+[SAM3D](https://ai.meta.com/sam3d/)
+> - Meta Research
+> - Recreating 3D textured objects from a single image
+> - Uses a mask to isolate an object from a scene
+> - Optionally allows a pointset input or better object scaling and alignment
+> Workings:
+> - Input encoding
+> 	- DINOV2 on the cropped image + full image for context
+> 	- *Optional* Coarse pointmap (pointcloud)
+> 	- *shape and layout tokens* learned embeddings initialized at the start of the forward pass (placeholders to transform into final pose and shape)
+> - Stage 1: Coarse Geometry and Pose
+> 	- Architecture:
+> 		- 1.2B Dual latent flow transformer (2 transformers have a shared self-attention layer) https://github.com/facebookresearch/Mixture-of-Transformers
+> 		- encodes the features in latent space
+> 		- learns generate meaningful data from noise by calculating a continuous flow velocity field (instead of diffusion based linear denoising)
+> 	- output:
+> 		- creates voxel occupancy grid
+> 		- pose in 3D scene
+> - Stage 2: Texture and Refinement
+> 	- Architecture
+> 		- 600M sparse latent flow transformer https://microsoft.github.io/TRELLIS/
+> 		- refines fine scale geometry
+> 		- generates the texture
+> 	- output:
+> 		- dense latent 3D representation
+> - Stage 3: Decoding
+> 	- Mesh Decoded
+> 	- Gaussian splat decoder
 ### Sparse voxel hierarchies
 
 [XCube 2024](https://research.nvidia.com/labs/toronto-ai/xcube/)
