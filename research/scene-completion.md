@@ -40,6 +40,7 @@
 
 [SAM3D](https://ai.meta.com/sam3d/)
 > - Meta Research
+> - needs 32GB VRAM
 > - Recreating 3D textured objects from a single image
 > - Uses a mask to isolate an object from a scene
 > - Optionally allows a pointset input or better object scaling and alignment
@@ -64,8 +65,21 @@
 > 	- output:
 > 		- dense latent 3D representation
 > - Stage 3: Decoding
-> 	- Mesh Decoded
+> 	- Mesh Decoder
 > 	- Gaussian splat decoder
+
+[Hunyuan3D](https://github.com/Tencent-Hunyuan/Hunyuan3D-Omni)
+> - Tensent
+> - Needs 10GB VRAM
+> - Recreating 3D models from a single image + optional 3D data (pcd, bb, voxels)
+> a unified framework for fine-grained, controllable 3D asset generation built on Hunyuan3D 2.1. In addition to images, Hunyuan3D-Omni accepts point clouds, voxels, bounding boxes, and skeletal pose priors as conditioning signals, enabling precise control over geometry, topology, and pose. Instead of separate heads for each modality, our model unifies all signals in a single cross-modal architecture. We train with a progressive, difficulty-aware sampling strategy that selects one control modality per example and biases sampling toward harder signals ( e.g., skeletal pose) while downweighting easier ones ( e.g., point clouds), encouraging robust multi-modal fusion and graceful handling of missing inputs.
+
+[Trellis](https://github.com/microsoft/TRELLIS)
+> - Microsoft
+> - Needs 16GB VRAM
+> - Generates a 3D model from a single Image
+> - outputs to: Radiance Fields, 3D Gaussians, and meshes
+> a unified Structured LATent (SLAT) representation that allows decoding to different output formats and Rectified Flow Transformers tailored for SLAT as the powerful backbones.
 ### Sparse voxel hierarchies
 
 [XCube 2024](https://research.nvidia.com/labs/toronto-ai/xcube/)
