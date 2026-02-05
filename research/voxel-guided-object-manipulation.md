@@ -1,6 +1,6 @@
 # Completed object dynamification
 
-PE&RS 2025
+ISPRS 2026
 ## Scope:
 *Introducing part segmentation on a completed SDF to enable part-aware scaling and repetition*
 ## Introduction
