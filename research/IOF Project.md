@@ -170,3 +170,71 @@ Corneel Cannaerts [corneel.cannaerts@kuleuven.be](mailto:corneel.cannaerts@kuleu
 Gilles Callebaut [gilles.callebaut@kuleuven.be](mailto:gilles.callebaut@kuleuven.be)
 Creative makers [https://creativemakers.xyz/](https://creativemakers.xyz/)
 Design for Impact https://www.luca-arts.be/en/design-impact
+
+
+## Candidate Motivation and Vision
+
+Jelle Vermandere
+- 30 years old
+### Studies
+- Animation (KASK)
+- Engineering Architecture (UGent)
+- PhD Industrial Engineering
+### 
+- Multi-disciplinary maker
+- YouTube Creator (90.000 subs & 6.8M views)
+
+### Expertise
+- Python / C# programming
+- Game development
+- AR / VR development
+- Website design
+- Machine learning implementation
+	- computer vision
+	- generative modeling
+- Robotics prototyping
+- IOT
+- Drone operation
+
+## Projectaanvragen
+
+
+Mei 2027 -> Vlaio Defra
+September 2027 -> Euporean bauhaus -> Luca
+Mei 2028 -> FWO SBO 
+September 2028 -> Horizon -> build for partnership
+
+
+Mail sturen naar iedereen met paragraaf per projectaanvraag
+zie mail 
+- VLAIO O&O (3.000.000) of DEFRA call (Mei 2027) - M Bassier /gilles callebaut   -> Y
+- European bauhaus (sept 2027) - Valery / Corneel / Bassier -> Y
+- Junior research project (April 2028) - Corneel / Valery  -> N
+- 2 opties
+	- Horizon (sept 2028) (veel moeilijker) - Builtforpartnership M. bassier / Corneel-> Y  
+	- FWO SBO project (September 2028) - gilles callebaut / Bassier  -> Y
+
+### 1. Spoorwegen Opmeten
+[Vlaio Onderzoeksproject](https://www.vlaio.be/en/subsidies/development-project/which-enterprises-and-projects-are-eligible-development-project-subsidy) (500K-3M) of [Defra Call](https://www.belspo.be/belspo/defra/call_en.stm) (+-2M)
+- Spoorweg infrastructuur opmeten met laserscanners en drones
+- Machine learning voor segmentatie van sporen +-1mm correct
+### 2. Upcycling Through Object Digitisation
+[European Bauhaus](https://new-european-bauhaus.europa.eu/funding/currently-open-and-forthcoming-calls_en) (3M-10M)
+- Improve the upcycling process through digitisations of valuable objects/ materials
+- Better and faster documentation
+- Easier to use in design process
+### 3. Fundamental Research
+[Junior research project](https://www.fwo.be/en/support-programmes/all-calls/senior-researchersresearch-teams/junior-and-senior-research-project/) (700K)
+- Media Ecologies
+- AR / VR
+	- Does VR/AR change how architects design space?
+	- How do immersive media affect users’ perception of scale, materiality, and atmosphere
+	- Are VR/AR redefining architectural representation or architectural reality itself?
+	- What does architecture designed for VR/AR look like?
+- Gaming
+	- Architecture in Games: How space guides players
+- Generative Modeling
+	- Creativity in the age of prompting art
+### 4. Creative Makers
+[FWO SBO project](https://www.fwo.be/nl/ondersteuningsprogramma-s/alle-oproepen/gevestigde-onderzoekers-onderzoeksteams/sbo-strategisch-basis-onderzoek-projecten/) (2M)
+- 
