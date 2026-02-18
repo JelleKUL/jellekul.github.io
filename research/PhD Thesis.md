@@ -1,2 +1,43 @@
 # XR-empowered dynamic reality modeling for AECO applications
 
+## Jury
+
+Kristof Vandenbogaerde
+Adalberto L. Simeone
+Corneel Cannaerts?
+External:
+- [Prof. Dr. Angela Dai]([https://www.3dunderstanding.org/team.html](https://www.professoren.tum.de/en/dai-angela)) TU Munich
+- [Prof. Dr. Daniel Cremers](https://www.professoren.tum.de/en/cremers-daniel) TU Munich
+
+## Main Structure
+
+1. Introduction
+2. Scene Dynamification goal and background 
+3. Data Acquisition
+	1. Real world data [[22-01-pointcloud-validation]]
+		1. XR devices
+		2. Laserscanners
+		3. Datasets
+	2. Synthetic data [[26-07-virtual-scanner]]
+		1. 3D models
+		2. Virtual scanner
+	3. Dataset standardisation [[24-05-geomapi]]
+4. Alignment and Updating of the data
+	1. Global and local alignment [[22-06-two-step-alignment]]
+	2. Dataset updating [[22-07-automatic-alignment-and-completion]]
+5. Scene/object segmentation/detection [[23-06-Dataset-Cleanup]]
+6. Scene completion
+	1. mesh refinement [[23-09-texture-mesh-refinement]]
+	2. semantic uv mapping [[24-09-semantic-uv-mapping]]
+	3. geometry reconstruction [[23-06-Dataset-Cleanup]]
+	4. texture inpainting [[23-06-Dataset-Cleanup]]
+7. Object completion
+	1. Voxel based object completion [[25-02-object-generation]]
+		1. Voxel guiding [[25-04-voxel-editor]]
+	2. Image based completion
+8. Object dynamification [[26-07-object-dynamification]]
+9. Dynamic scene interaction
+10. Conclusions & future works
+11. Valorisation
+	1. [[IOF Project]] 
+	2. [[Exploitation Plan]]

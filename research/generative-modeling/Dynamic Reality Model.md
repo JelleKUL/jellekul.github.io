@@ -1,18 +1,4 @@
----
-layout: publication
-title: Dynamic reality Model
-date: 2026-01-01
-permalink: 
-icon: "/img/icons/SceneInteraction.png"
-methodImage: 
-resultImage: 
-doilink: 
-githublink: 
-objective: 3
-type: Research
-description: Dynamic reality Modeling
-bibtex: 
----
+
 # Dynamic Reality Model
 
 ## Introduction

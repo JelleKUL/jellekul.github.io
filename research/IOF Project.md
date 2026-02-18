@@ -215,16 +215,22 @@ zie mail
 	- FWO SBO project (September 2028) - gilles callebaut / Bassier  -> Y
 
 ### 1. Spoorwegen Opmeten
-[Vlaio Onderzoeksproject](https://www.vlaio.be/en/subsidies/development-project/which-enterprises-and-projects-are-eligible-development-project-subsidy) (500K-3M) of [Defra Call](https://www.belspo.be/belspo/defra/call_en.stm) (+-2M)
+>Mei 2027
+>[Vlaio Onderzoeksproject](https://www.vlaio.be/en/subsidies/development-project/which-enterprises-and-projects-are-eligible-development-project-subsidy) (500K-3M) of [Defra Call](https://www.belspo.be/belspo/defra/call_en.stm) (+-2M)
+>Geomatica & ??
 - Spoorweg infrastructuur opmeten met laserscanners en drones
 - Machine learning voor segmentatie van sporen +-1mm correct
 ### 2. Upcycling Through Object Digitisation
-[European Bauhaus](https://new-european-bauhaus.europa.eu/funding/currently-open-and-forthcoming-calls_en) (3M-10M)
+> Sep 2027
+> [European Bauhaus](https://new-european-bauhaus.europa.eu/funding/currently-open-and-forthcoming-calls_en) (3M-10M)
+> Geomatica, Architectuur & Luca
 - Improve the upcycling process through digitisations of valuable objects/ materials
 - Better and faster documentation
 - Easier to use in design process
 ### 3. Fundamental Research
-[Junior research project](https://www.fwo.be/en/support-programmes/all-calls/senior-researchersresearch-teams/junior-and-senior-research-project/) (700K)
+> April 2028
+>[Junior research project](https://www.fwo.be/en/support-programmes/all-calls/senior-researchersresearch-teams/junior-and-senior-research-project/) (700K)
+> Architectuur & Odisee-IT
 - Media Ecologies
 - AR / VR
 	- Does VR/AR change how architects design space?
@@ -235,6 +241,26 @@ zie mail
 	- Architecture in Games: How space guides players
 - Generative Modeling
 	- Creativity in the age of prompting art
-### 4. Creative Makers
-[FWO SBO project](https://www.fwo.be/nl/ondersteuningsprogramma-s/alle-oproepen/gevestigde-onderzoekers-onderzoeksteams/sbo-strategisch-basis-onderzoek-projecten/) (2M)
-- 
+### 4. DRAMCO
+> Sep 2028
+>[FWO SBO project](https://www.fwo.be/nl/ondersteuningsprogramma-s/alle-oproepen/gevestigde-onderzoekers-onderzoeksteams/sbo-strategisch-basis-onderzoek-projecten/) (2M) of [Vlaio Onderzoeksproject](https://www.vlaio.be/en/subsidies/development-project/which-enterprises-and-projects-are-eligible-development-project-subsidy) (500K-3M)
+> Geomatica & DRAMCO
+- maken van digital twin van omgeving met meer gedetailleerde oppervlakken voor radiopropagatie, zowel indoor als outdoor
+	- type materiaal
+	- de korrel van het materiaal
+	- de dikte van de muren
+	- Sionna RT
+	- wordt steeds belangrijker met hogere frequenties -> next gen signalen
+- Telecom bedrijven
+	- Nokia, Ericson,...
+### 5. Creatieve makers
+
+- creative makers gebruiken als leverage voor verdere uitwerking
+- als extra output en ondersteuningsplatform voor de verschillende aanvragen.
+
+### Extra personen
+#### Odisee
+[Stefanie Beghein](https://www.odisee.be/personen/stefanie-beghein?account=acc-profile)Onderzoekscoördinator
+[Thomas Van Den Bossche](https://www.odisee.be/personen/thomas-van-den-bossche?account=acc-profile) AI researcher
+[Davy De Winne](https://www.odisee.be/en/persons/davy-winne?account=acc-profile) UX
+[Filip Van Langenhove](https://www.odisee.be/personen/filip-van-langenhove?account=acc-profile)DUBIT duurzaam bouwen

@@ -38,7 +38,7 @@
 ### 3D Object detection
 [VoteNet 2019](https://github.com/facebookresearch/votenet)
 > an end-to-end 3D object detection network based on a synergy of deep point set networks and Hough voting.
-> Small imporovements: Votenet + & MLCVNet 
+> Small improvements: Votenet + & MLCVNet 
 
 [V-DETR 2023](https://github.com/V-DETR/V-DETR)
 > Uses DETR (detection transformer) in 3D with Vertex Relative Position Encoding to improve locality
@@ -169,8 +169,6 @@
 [3D Semantic Scene Completion: A Survey](https://doi.org/10.1007/s11263-021-01504-5)
 > Semantic scene completion (SSC) aims to jointly estimate the complete geometry and semantics of a scene, assuming partial sparse input. In the last years following the multiplication of large-scale 3D datasets, SSC has gained significant momentum in the research community because it holds unresolved challenges.
 
-
-
 [ScanComplete 2018](https://github.com/angeladai/ScanComplete)
 > A novel data-driven approach for taking an incomplete 3D scan of a scene as input and predicting a complete 3D model along with per-voxel semantic labels.
 
@@ -256,6 +254,8 @@
 ## Methodology
 ### Pre-processing
 - Indoor scenes are captured using TLS'es or MMS's, capturing both unstructured (colored)pointclouds and panoramic images.
+- At the same time we also use a synthetic dataset to evaluate the full scene reconstruction numerically. based on the Virtual scanner
+- 
 - The Pano's have are localised in the same coordinate system as the pointclouds.
 ### 3D Object detection
 - 3d object detection is done using Votenet on the pointcloud directly. Since the pointcloud data has less occlusions and is more complete, we assume we can detect more objects 
@@ -282,9 +282,11 @@ using Gaussian splat 27-Slicing / part detection
 - In order to get a more realistic transformation of the objects, we aim to preserve part-wise proportions of our objects
 - We perform a part detection on the object, using convex decomposition to get plausible parts that are not bound to any specific class.
 - The part indexes are baked into the vertex colors of the textured mesh.
-- 
+- For the actual manipulation, the user can divide the object in 3 parts along a chosen axis. After that, the user can stretch the object to a desired position. All parts that are  entirely in the first section do not change, all objects that are entirely in the last section get moved to the end position. All parts that are either fully in the second zone or partially, are stretched to match the new distance.
+	- This is done either by just stretching.
+	- Or by repeating the parts along the axis and scaled to match the exact size.
 ### Scene reconstruction
-- The objects are placed back into the scene, 
+- The objects are placed back into the scene, and can be freely manipulated in the environment.
 
 ## Experiments
 
