@@ -34,6 +34,7 @@ External:
 7. Object completion
 	1. Voxel based object completion [[25-02-object-generation]]
 		1. Voxel guiding [[25-04-voxel-editor]]
+		2. evaluation [[25-06-completion-evaluation]]
 	2. Image based completion
 8. Object dynamification [[26-07-object-dynamification]]
 9. Dynamic scene interaction
