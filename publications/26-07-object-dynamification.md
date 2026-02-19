@@ -3,8 +3,8 @@ layout: publication
 title: Adaptive Scaling with Geometric and Visual Continuity of completed 3D objects
 date: 2026-07-05
 permalink: /publications/object-dynamification/
-icon: img/icons/object-dynamification.png
-methodImage: img/publications/object-dynamification-method.png
+icon: img/icons/VoxelEditing.png
+methodImage: img/publications/objectDynamificationMethod.png
 doilink:
 githublink: https://github.com/JelleKUL/generationtools
 objective: 3
