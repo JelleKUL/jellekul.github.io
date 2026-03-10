@@ -180,10 +180,9 @@ Jelle Vermandere
 - Animation (KASK)
 - Engineering Architecture (UGent)
 - PhD Industrial Engineering
-### 
+### Hobbies
 - Multi-disciplinary maker
-- YouTube Creator (90.000 subs & 6.8M views)
-
+- YouTube Creator (90.000 subs & 7M views)
 ### Expertise
 - Python / C# programming
 - Game development
@@ -195,9 +194,20 @@ Jelle Vermandere
 - Robotics prototyping
 - IOT
 - Drone operation
+### Motivation
+- I see great value in combining expertises from different fields, especially in research, thre are a lot of experts
+- I like to try new things all the time
+- I like combining multiple disciplines
+- My PhD was very focussed around a single theme, I want to expand the knoledge I have built into more disciplines.
+- 
 
 ## Projectaanvragen
 
+#### TETRA: 
+> Vlaio
+> Hogeschool hoofdaanvrager
+>500.000 7.5% eigen inbreng
+>Praktijkgericht problemen van de industrie oplossen met bestaande technologie
 
 Mei 2027 -> Vlaio Defra
 September 2027 -> Euporean bauhaus -> Luca
@@ -223,7 +233,8 @@ zie mail
 ### 2. Upcycling Through Object Digitisation
 > Sep 2027
 > [European Bauhaus](https://new-european-bauhaus.europa.eu/funding/currently-open-and-forthcoming-calls_en) (3M-10M)
-> Geomatica, Architectuur & Luca
+> Geomatica, Architectuur, Luca, DUBIT, UX (Odisee)
+> Ook internationale partners zoeken tijdens aanvraag
 - Improve the upcycling process through digitisations of valuable objects/ materials
 - Better and faster documentation
 - Easier to use in design process
@@ -257,10 +268,55 @@ zie mail
 
 - creative makers gebruiken als leverage voor verdere uitwerking
 - als extra output en ondersteuningsplatform voor de verschillende aanvragen.
-
+### 6. UX in manufactering
+> Tetra project
+> bedrijven samenbrengen op zoek naar probleem 
 ### Extra personen
 #### Odisee
 [Stefanie Beghein](https://www.odisee.be/personen/stefanie-beghein?account=acc-profile)Onderzoekscoördinator
 [Thomas Van Den Bossche](https://www.odisee.be/personen/thomas-van-den-bossche?account=acc-profile) AI researcher
 [Davy De Winne](https://www.odisee.be/en/persons/davy-winne?account=acc-profile) UX
 [Filip Van Langenhove](https://www.odisee.be/personen/filip-van-langenhove?account=acc-profile)DUBIT duurzaam bouwen
+
+
+Odisee DUBIT
+
+- Tetra project
+- niveau van gebouwschil
+- herbruikbedrjiven
+	- ROTOR
+	- NAV, enbuilt
+- disseminatie met studenten
+
+Odisee UX AI
+
+- Gericht op UX valorisatie
+-  TRL 7-8
+- blikopener
+- vrachtwagen lading optimalisatie
+- Verschillende
+	- Zelf aanvraag indienen
+	- Aansluiten bij bestaand project
+
+### A. Situering van het voorstel inclusief achtergrond en state-of-the-art 
+>2 Pagina's
+- Geef de economische of socio-economische uitdaging weer. Wat is de opportuniteit die aanleiding geeft tot dit traject?
+- Beschrijf kort de state-of-the-art en de reeds behaalde resultaten waarop verder gebouwd wordt?
+- Enkel voor type 4: Bij welke onderzoekslijn(en) van de hogeschool en van KU Leuven sluit dit voorstel aan? Hoe past dit in de roadmap van de betrokken onderzoeksteams?
+- Enkel voor type 4: Op welke manier is dit voor de hogeschool en voor KU Leuven een strategische prioriteit en welk engagement wordt genomen op de langere termijn? Heeft u reeds een idee hoe verder gegaan wordt na afloop van deze financiering? Hoe past dit in een langere termijn visie?
+- Wat is uw visie op de freedom-to-operate? Geef een beschrijving van de huidige IPsituatie.
+### B. Motivatie en visie van de kandidaat
+> 1 Pagina
+- Beschrijf waarom u dit traject wil aanvatten en wat uw ambities zijn op korte en middellange termijn.
+- Geef uw visie op het gekozen traject en op het domein en de markt waarbij het aansluit. Waarom is volgens u het gekozen traject de beste valorisatiestrategie?7
+- Geef aan waarom u vindt dat u de juiste persoon bent om dit traject uit te voeren.
+### C. Beschrijving van de beoogde doelstellingen en daarbij horende aanpak (stappenplan), alsook het daarvoor benodigde budget
+> 1 Pagina
+- Voortbouwend op de state-of-the-art (voor type 4 ook de roadmap/visie), naar welk resultaat werkt u toe? Geef aan op welke manier dit traject bijdraagt tot de IOF parameters.
+- Identificeer/analyseer de vragen en risico’s (voor type 4: risico’s/uitdagingen) die in dit traject dienen aangepakt te worden met het oog op het bereiken van de beoogde impact.
+- Stel een stappenplan op. Welke taken voorziet u, rekening houdend met het gekozen type? Deze aanpak moet verduidelijken hoe de doelstellingen bereikt zullen worden.-
+- Enkel voor type 4: Welke gezamenlijke uitkomsten voorziet u voor de hoger genoemde onderzoekslijn(en), en hoe zullen hiertoe mensen en middelen gebundeld worden?
+- Geef een beknopt overzicht van de gevraagde werkingskosten (naast de personeelskost van de opdrachtnemer die wordt berekend op basis van geldende salariskosten op het niveau van doctor-assistent met relevante anciënniteit): aan de referees wordt gevraagd of het door u geraamde budget nodig en realistisch is voor het voorgestelde traject.
+### D. Omkadering door de promotor(en)
+> 1.5 Pagina
+- De promotor(en) omschrijven hoe het voorgestelde traject aansluit bij het lopende onderzoek en/of andere valorisatietrajecten binnen de groep, hoe dit traject een duidelijke hefboom kan vormen, en waarom de kandidaat het juiste profiel heeft om dit te realiseren in de voorziene periode. Welke ondersteuning wordt voorzien in dit traject?

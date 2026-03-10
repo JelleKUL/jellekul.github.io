@@ -10,4 +10,5 @@ githublink: https://github.com/JelleKUL/completiontools-evaluation
 objective: 2
 type: Thesis
 description: A thesis project evaluation the VAE style object completion networks
+bibtex:
 ---

@@ -2,12 +2,19 @@
 
 ## Jury
 
-Kristof Vandenbogaerde
-Adalberto L. Simeone
-Corneel Cannaerts?
+- Kristof Vandenbogaerde
+- Adalberto L. Simeone
+- Corneel Cannaerts
 External:
-- [Prof. Dr. Angela Dai]([https://www.3dunderstanding.org/team.html](https://www.professoren.tum.de/en/dai-angela)) TU Munich
+- ~~[Prof. Dr. Angela Dai]([https://www.3dunderstanding.org/team.html](https://www.professoren.tum.de/en/dai-angela)) TU Munich~~
 - [Prof. Dr. Daniel Cremers](https://www.professoren.tum.de/en/cremers-daniel) TU Munich
+- [Prof. Dr. Raphaelle Chaine](https://perso.liris.cnrs.fr/raphaelle.chaine/)Université de Lyon
+	- 3D ML & inpainting
+- [Prof. Dr. Lourdes De Agapito Vicente](https://profiles.ucl.ac.uk/40331-lourdes-de-agapito-vicente/about) (University College London)
+	- 3D Vision & Generative AI 
+- [Prof. Dr. Seyran Khademi](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/intelligent-systems/pattern-recognition-bioinformatics/computer-vision-lab/people/seyran-khademi) TU Delft
+	- CV & Architecture (floor plan generation)
+
 
 ## Main Structure
 
@@ -30,12 +37,12 @@ External:
 	1. mesh refinement [[23-09-texture-mesh-refinement]]
 	2. semantic uv mapping [[24-09-semantic-uv-mapping]]
 	3. geometry reconstruction [[23-06-Dataset-Cleanup]]
-	4. texture inpainting [[23-06-Dataset-Cleanup]]
+	4. texture inpainting [[research/scene-completion]]
 7. Object completion
 	1. Voxel based object completion [[25-02-object-generation]]
 		1. Voxel guiding [[25-04-voxel-editor]]
 		2. evaluation [[25-06-completion-evaluation]]
-	2. Image based completion
+	2. Image based completion [[research/scene-completion]]
 8. Object dynamification [[26-07-object-dynamification]]
 9. Dynamic scene interaction
 10. Conclusions & future works
