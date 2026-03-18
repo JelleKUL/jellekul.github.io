@@ -168,8 +168,11 @@ minder inventariseren, meer digitaliseren
 ## Contacts:
 Corneel Cannaerts [corneel.cannaerts@kuleuven.be](mailto:corneel.cannaerts@kuleuven.be)  
 Gilles Callebaut [gilles.callebaut@kuleuven.be](mailto:gilles.callebaut@kuleuven.be)
-Creative makers [https://creativemakers.xyz/](https://creativemakers.xyz/)
-Design for Impact https://www.luca-arts.be/en/design-impact
+Ben hagenaars
+Maarten Bassier
+Valery De Smedt
+Davy De Winne
+Filip Vanlangenhove
 
 
 ## Candidate Motivation and Vision
