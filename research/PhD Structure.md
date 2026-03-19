@@ -50,6 +50,7 @@
 		- Synthetic dataset for evaluating dynamic scene reconstruction from partial scans
 - **Thesis Outline**
 	- Outlining all the chapters
+
 ## 2. Scene Dynamification Background and Terminology
 > Explain the concepts around scene dynamification and the terms
 
