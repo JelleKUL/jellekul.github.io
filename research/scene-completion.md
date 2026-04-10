@@ -203,6 +203,9 @@
 [Gen3DSR: Generalizable 3D Scene Reconstruction via Divide and Conquer from a Single View](https://andreeadogaru.github.io/Gen3DSR/)
 > a hybrid method following a divide-and-conquer strategy. We first process the scene holistically, extracting depth and semantic information, and then leverage an object-level method for the detailed reconstruction of individual components. By splitting the problem into simpler tasks, our system is able to generalize to various types of scenes without retraining or fine-tuning.
 > Similar workflow, but all in 2D, using depth estimation to get the 3D scene. Also splits the foreground and background. Uses off-the-shelf models and combines them, like I do. Uses depth inpainting for environment reconstruction.
+
+Yu et al. (2025) —[ METASCENES](https://meta-scenes.github.io/)
+>Introduced **METASCENES**, a large-scale simulatable 3D scene dataset built by replacing objects in real-world scans with high-quality assets. It contains **15,366 objects across 831 fine-grained categories** and supports embodied AI research, including robotic manipulation and vision-and-language navigation, enabling scalable scene synthesis, sim-to-real transfer, and generalizable agent learning without relying on manual artist-driven designs.
 ### Object dynamification
 #### Scale aware Object scaling
 [9-Slicing for Images](https://www.w3.org/TR/css-backgrounds-3/#border-image-slice)

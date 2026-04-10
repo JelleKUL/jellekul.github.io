@@ -11,14 +11,14 @@
 		- Compare to BIM Models?
 		- digital twins, smart buildings, or real-time simulations
 	- What is their advantage for existing buildings?
-	- How are Dynamic scenes created now?
-		- 3D scan completion
-		- single object completion from differing inputs(images, pointclouds, voxels)
+	- Why is making DRM models not 
 	- A lot of data is scanned, but takes long -> out-of-date and is not intelligent or interactable
 	- There is an increase in low-cost fast scanning devices (Hololens, Phones,...) that are worse quality
 - **Problem Statement**
 	- There is no clear pipeline from partially scanned scenes to dynamic reality model.
-		- very labour intensive-> manual reconstructing or Fallback to BIM models, which lack visual fidelity.
+		- Either full scene occlusion infilling -> not dynamic
+		- or seperate model completion -> not in scene context
+		- very labour intensive-> no clear workflow, manual reconstructing on a lot of steps or Fallback to BIM models, which lack visual fidelity.
 	- Several obstacles:
 		- Data challenges
 			- Varying quality of scans from different devices.
@@ -30,11 +30,11 @@
 			- the objects and scene need to be completed and mad dynamic
 		- Evaluation challenges
 			- The lack of reliable ground truth data for scan completion
-- **Research Aim**
+- **Research Aim** ==1 page max==
 	- Develop a modular pipeline to transform partially scanned indoor rooms into complete, interactive, dynamic 3D environments.
 	- Key Innovation
 		- Create a dynamic reality model of an existing scene, which combines the fidelity of a detailed reconstruction with the intractability of a hand-made 3D model (BIM-Model)
-	- Create a modular pipeline using a mix of existing and new tools.
+	- Create a modular pipeline using a mix of existing and new tools. ==enkel output mag vaag blijven, vernieuwende ook bijsteken==
 		- Scene Alignment
 		- Scene segmentation
 		- Scene completion
@@ -52,17 +52,30 @@
 	- Outlining all the chapters
 
 ## 2. Scene Dynamification Background and Terminology
-> Explain the concepts around scene dynamification and the terms
+> Explain the concepts around scene dynamification and the terms also define scope
 
 - **Introduction**
 	- In this chapter, explain once and for all what scene dynamification is!
+- **3D representations**
+	- The different type of geometry representations and texture representations
+	- Explicit
+		- pcd, mesh, gaussian splat
+		- Store textures at point(vertex/gaussian level) or mapped to an image (face level)
+	- implicit
+		- SDF, paramteric model (bim), nerf
+		- store texture implicitly as a function or basic color and dirived to surface 
 - **Dynamic scene requirements**
-	- Objects that can be (re)moved from a scene 
-	- We need separate objects and scenes
+	- input:
+		- DRM relies on partial unstructured pointclouds and image data like panoramic images or localised pinhole camera images
+	- output:
+		- complete 3D models of the object
+		- with a notion of part awareness to enable part-aware scaling that looks more natural rather that uniform scaling
+		- Objects that can be (re)moved from a scene 
+		- The scene itself must be complete
+
 - **==Go over each step and give small background?==**
 	- Object completion?
 	- scene completion?
-- **What kind of input data is used for dynamification?**
 - **Current SOTA dynamification works**
 - **Conclusion**
 
@@ -70,42 +83,99 @@
 > occlusie evaluatie, tussen brol en structuur, door object, in industriële scenes, puntenwolk deficiencies
 
 - **Introduction**
-	- We need partially scanned scenes, we get both real and synthetic data
-	- We limit our data to indoor single room datasets of furnished and industrial scenes
-- **Related work**
-	- Capture technologies and real datasets
-	- ==explain the limits of real and synthetic here?==
+	- in this chapter:
+		- what datasets we used to develop and evaluate our pipeline as a whole and each part 
+	- As discussed in chapter 2 the input for our pipeline is a partially scanned scene along with color information (through a pano image or other localised images)
+	- Our needs:
+		- We need partially scanned indoor single room scenes of industrial and residential styles
+		- Multi-temporal and/or multi-sensory for our alignment and updating part
+		- object detection ground truth for the object detection part
+		- scene level ground truth of the empty scene for our scene completion
+		- object level ground truth and isolated partially scanned objects
+	- current datasets are either:
+		- Scene level:
+			- real but have no ground truth completion (they do have (instance)segmentation)
+			- synthetic, but are not realistic
+		- Object level:
+			- Synthetic, large variety and amount, but not scanned data, self intersecting geometry ect...
+			- Real, very detailed but not very large dataset
+	- so we plan to use a combination of different datasets to cover our needs per step.
+		- first from the publically available datasets
+		- second we will record multi-temporal datasets at our campus because it is close by and easy to capture, and large variety 
+		- last, There is currently no real dataset that has all of the above
+			- So We created the V-scan dataset that consists of:
+			- scene-level captures, multi temporal and sensory, both with and without objects. Ground truth for all the detectable objects along with the bounding boxes and isolated scans.
+
+- **Existing Datasets**
+	- Introduction
+		- there are already a number of datasets that are very popular around computer vision tasks
+	- useful datasets
+		- existing datasets and how they are made
+		-  Public manually scanned scene level datasets: Scannet++, Matterport3D, arkit scenes
+		- Public object level datasets: Redwood (real), shapenet (synthetic)
+
 - **Real world data capture**
-	- Laserscanners
-		- Static, very precise but high amount of occlusion due to limited setups
-		- Handheld, Slightly less precise, drift, less occlusions
-		- panoramic images
-		- E blok opmetingen, werktuigkunde,...
-	- XR devices
-		- Unprecise, very fast, less object occlusions, but worse range
-		- video feed
-		- XR data capture app
-	- Public Datasets
-		- scannet (++), kitty, sunrgbd,...
-		- Redwood-data
-	- Real Dataset evaluation and shortcomings
-		- 
-- **Synthetic data creation**
+	- Introduction
+		- our first set of data is real locally captured data using a mix of sensors
 	- Related work
+		- laserscanners and the types use
+			- Static, very precise but high amount of occlusion due to limited setups
+			- Handheld, Slightly less precise, drift, less occlusions
+			- panoramic images from laserscanners
+		- XR devices
+			- Unprecise, very fast, less object occlusions, but worse range
+			- video feed
+	- Capture methodology
+		- capture busy diverse scenes with different scanners, use them like intended, laserscanner, single or dual setups per room, XR device walk around the room and try to capture everything
+	- Laserscanned scenes
+		- E blok opmetingen, werktuigkunde, living lab... (from 2-step alignment paper)
+	- XR devices
+		- E blok, living lab
+		- XR data capture app -> https://github.com/JelleKUL/XRDataCollection
+	- Comparison
+		- the xr device vs TLS was quicker to get going, but took longer to scan the full room
+		- the laserscanner is much more detailed, but has more occlusions at ground level, but the XR devices have less range, so they struggle to capture high and far parts.
+
+- **Synthetic data creation**
+	- intro
+		- 2 major parts: creating a virtual scanner and creating a procedural room layout generator
+	- Related works
 		- limitations of synthetic datasets
 		- Existing synthetic datasets
-		- ==existing virtual scanners?==
-	- Methodology
+			- Shapenet(synthetic)
+		- existing virtual scanners
+	- procedural room generators
+		- existing works in video games and other synthetic datasets
+	- Virtual scanner Methodology
 		- Scanner setup
 		- Geometric scanning
 		- Image capture and coloring
 		- Object Isolation
+	- Procedural room generator methodology
+		- 
 	- V-scan dataset
 		- My own dataset for scene completion evaluation
+		- dataset metrics ook bijzetten (aantal objecten ect....)
+- **Datasets comparison and overview**
+	- Explanation and Comparison table of all the datasets used in this thesis
+		- Manually scanned 3D scenes: E-blok, werktuigkunde, house brugge, livinglab
+		- Public manually scanned scene level datasets: Scannet++, Matterport, redwood-data
+		- Public object level datasets: Redwood (real), Shapenet(synthetic)
+		- My own V-Scan dataset (synthetic, object and scene level)
+	- Metrics to compare:
+		- GT available
+		- multi-temporal
+		- multiple- scanners
+		- nr. scenes
+		- Types of scenes
+		- nr of objects
+		- average objects per scene
+		- average points per scene
+		- % of occlusion per scene
 - **Conclusion**
 
 ## 4. Alignment and Updating of the data
-> The full alignment and updating pipeline, nothing more, nothing less
+> The full alignment and updating pipeline, based on the 2 first papers
 
 - **Introduction**
 	- The need for incremental updating of large datasets
@@ -132,6 +202,7 @@
 - **Conclusion**
 
 ## 5. Object and Occlusion detection
+> This chapter analyses the incomplete scene, first the different objects in the scene, then the per-object and scene wide occlusion.
 
 - **Introduction**
 	- If we want to complete the objects and scene separately we need to know which  is which
@@ -155,7 +226,10 @@
 			- calculate for the whole scene at once
 - **Experiments**
 	- Object isolation
+		- evaluating the accuracy and IOU of the boundingboxes
 	- Occlusion detection
+		- Show results, highlight the shortcomings due depending on the voxel resolution
+		- ==Compare with V-Scan ground truth mesh vs pointcloud occlusion?==
 - **Conclusion**
 
 ## 6. Scene completion
@@ -217,30 +291,41 @@
 	- method 1 vs 2
 - **Conclusion**
 
-## 8. Object dynamification 
+## 8. Scene dynamification 
 > Turning the static completed objects into dynamic ones
 
 - **Introduction**
 	- ==from textured mesh back to CSDF for dynamification?==
 	- the final step in our dynamification process 
+	- Putting the scene back together
+- **Related Work**
+	- part segmentation
+	- surface deformation
+	- scaling
 - **Methodology**
 	- Part segmentation
 	- Scaling zone definition
 	- Value interpolation
 	- Value repeating
 - **Experiments**
+	- empirical comparison of the scaled meshes with the different methods
+	-  use on different datasets (matterport, scannet, *v-scan*)
 - **Conclusion**
 
-## 9. Dynamic scene interaction
-> Putting it all together, do visual full pipeline comparisons and show potental POC's
+## 9. Conclusions & future works
 
+- **Conclusions**
+	- Faster data iteration
+	- creation of dynamic, complete environments
+	- interaction with the digital environment
+	- limitations
+- **Future work**
+	- Increase robustness and expand the scope beyond single room
+	- increase the fidelity even more
+## 10. Valorisation
 - **Introduction**
-	- Putting the scene back together
-	- Exploring the possible use cases
-- **Related Work**
-	- existing tools to use virtual environments
-- **Evaluating completed scenes**
-	- use on different datasets (matterport, scannet, v-scan)
+	- use this technology for faster digitisation of reality
+- github repos ook beschrijven
 - **Potential Applications**
 	- Virtual reorganising
 	- Gamification
@@ -248,19 +333,7 @@
 	- upcycling
 	- facility management
 - **Conclusions**
-
-## 10. Conclusions & future works
-
-- **Conclusions**
-	- Faster data itteration
-	- creation of dynamic, complete environments
-	- interaction with the digital environment
-	- limitations
-- **Future work**
-	- Increase robustness and expand the scope beyond single room
-	- increase the fidelity even more
-## 11. Valorisation
-- **Introduction**
 - **Case study: Digital upcycling**
+	- explain the IOF business plan
 - **Further valorisation potentials and market position**
 - **Conclusions**

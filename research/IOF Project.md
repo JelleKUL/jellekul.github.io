@@ -168,7 +168,7 @@ minder inventariseren, meer digitaliseren
 ## Contacts:
 Corneel Cannaerts [corneel.cannaerts@kuleuven.be](mailto:corneel.cannaerts@kuleuven.be)  
 Gilles Callebaut [gilles.callebaut@kuleuven.be](mailto:gilles.callebaut@kuleuven.be)
-Ben hagenaars
+Ben hagenaars ben.hagenaars@luca-arts.be
 Maarten Bassier
 Valery De Smedt
 Davy De Winne

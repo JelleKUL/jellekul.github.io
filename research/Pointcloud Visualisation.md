@@ -15,3 +15,5 @@ bibtex:
 # Pointcloud Visualisation
 
 Plan: Een virtuele wandeling maken door een pointcloud in Unity
+
+kijken naar puntenvisualisatie
