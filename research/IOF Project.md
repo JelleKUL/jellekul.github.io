@@ -323,3 +323,72 @@ Odisee UX AI
 ### D. Omkadering door de promotor(en)
 > 1.5 Pagina
 - De promotor(en) omschrijven hoe het voorgestelde traject aansluit bij het lopende onderzoek en/of andere valorisatietrajecten binnen de groep, hoe dit traject een duidelijke hefboom kan vormen, en waarom de kandidaat het juiste profiel heeft om dit te realiseren in de voorziene periode. Welke ondersteuning wordt voorzien in dit traject?
+
+
+## Titel voorstellen:
+
+- Digitizing reality for a more sustainable future
+- Reality as Data: Digitising the Physical World for Sustainable and Efficient Impact
+
+## Samenvatting
+
+This IOF mandate is a joint initiative between three institutions within the KU Leuven Association: KU Leuven (KU Leuven Geomatics, Architecture, and DRAMCO), LUCA School of Arts, and Odisee University College (DUBIT and UCE). It is built around a shared research vision of the high-precision digitisation of the physical world and the deployment of these technologies for sustainability, usability, and efficiency across sectors. A term we call Digitising Reality.
+
+Each institution brings its own expertise: The KU Leuven Geomatics group will bring technical knowledge in 3D scanning, photogrammetry, and digital measurement technologies. KU Leuven Architecture adds expertise in the built environment, spatial design, and the application of digital technologies in architecture and heritage contexts. This is complemented by DRAMCO’s expertise in electronics, sensing, AI, and embedded systems. LUCA School of Arts contributes its perspective on design, creative innovation, and user experience, while Odisee DUBIT brings applied expertise in sustainability and finally, Odisee UCE brings expertise in implementation, and practice-oriented innovation.
+
+By combining these complementary strengths, the consortium will jointly develop four valorisation trajectories: Horizon, Vlaio, Tetra projects
+
+Persoonlijke motivatie:
+### B. Motivatie en visie van de kandidaat
+> 1 Pagina
+- Beschrijf waarom u dit traject wil aanvatten en wat uw ambities zijn op korte en middellange termijn.
+	- Einde van mijn doctoraat
+	- expertise omzetten in valorisatie in verschillende domeinen.
+	- samenbrengen van expertises van andere velden om onderzoek te verrijken
+	- Vooral meer valorisatiegerichtheid vanuit de hogescholen
+- Geef uw visie op het gekozen traject en op het domein en de markt waarbij het aansluit. Waarom is volgens u het gekozen traject de beste valorisatiestrategie?
+	- digitalisatie van de werkelijkheid is nog steeds een sterk evoluerend veld
+	- technologie die heel breed toepasbaar is en 
+- Geef aan waarom u vindt dat u de juiste persoon bent om dit traject uit te voeren.
+	- brede interesse in verschillende vakgebieden
+	- expertise in Architectuur (studies)
+	- kunst (opleiding)
+	- projectmatig te werk gaan -> youtube videos
+
+
+
+## Sources
+
+E. Gobbo, E. Maghsoudi Nia, A. Straub, and A. Stephan, "Exploring the effective reuse rate of materials and elements in the construction sector," _J. Build. Eng._, vol. 98, p. 111344, 2024, doi: 10.1016/j.jobe.2024.111344.
+
+Province of Limburg (Lead Partner), "Digital Deconstruction," Interreg North West Europe, project website. [Online]. Available: [https://vb.nweurope.eu/projects/project-search/digital-deconstruction/](https://vb.nweurope.eu/projects/project-search/digital-deconstruction/). [Accessed: May 18, 2026].
+
+OVAM / Flanders Circular, "Recycling rate of building materials," _CE Monitor_, Mar. 18, 2024. [Online]. Available: [https://cemonitor.be/en/indicator/housing/desired-changes/recycling-rate-of-building-materials/](https://cemonitor.be/en/indicator/housing/desired-changes/recycling-rate-of-building-materials/). [Accessed: May 18, 2026].
+
+L. Billet (interviewed by J. Studený), "Deconstruction and material circulation as a way to build," _Shared Cities: Creative Momentum_, 2018. [Online]. Available: [https://www.sharedcities.eu/material/972/](https://www.sharedcities.eu/material/972/). [Accessed: May 18, 2026].
+
+J. Vermandere, M. Bassier, and M. Vergauwen, “Two-step alignment of mixed reality devices to existing building data,” _Remote Sens._, vol. 14, no. 11, p. 2680, 2022, doi: [10.3390/rs14112680](https://doi.org/10.3390/rs14112680).
+
+S. De Geyter, J. Vermandere, H. De Winter, M. Bassier, and M. Vergauwen, “Point cloud validation: On the impact of laser scanning technologies on the semantic segmentation for BIM modeling and evaluation,” _Remote Sens._, vol. 14, no. 3, p. 582, 2022, doi: [10.3390/rs14030582](https://doi.org/10.3390/rs14030582).
+
+J. Vermandere, M. Bassier, and M. Vergauwen, “Geometry and texture completion of partially scanned 3D objects through material segmentation,” in _Proc. 20th Int. Joint Conf. Comput. Vis., Imag. Comput. Graph. Theory Appl. (GRAPP)_, SciTePress, 2025, pp. 193–202, doi: [10.5220/0013120000003912](https://doi.org/10.5220/0013120000003912).
+
+ J. Vermandere, M. Bassier, S. Cuypers, and M. Vergauwen, “Semantic UV mapping to improve texture inpainting for 3D scanned indoor scenes,” in _Proc. Comput. Graph. Vis. Comput. (CGVC)_, D. Hunter and A. Slingsby, Eds., The Eurographics Association, 2024, doi: [10.2312/cgvc.20241221](https://doi.org/10.2312/cgvc.20241221).
+
+ J. Vermandere, M. Bassier, and M. Vergauwen, “Texture-based separation to refine building meshes,” _ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci._, vol. X-1/W1-2023, pp. 479–485, 2023, doi: [10.5194/isprs-annals-x-1-w1-2023-479-2023](https://doi.org/10.5194/isprs-annals-x-1-w1-2023-479-2023).
+
+J. Vermandere, M. Bassier, and M. Vergauwen, “Guided object completion with interactive voxel editing,” _ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci._, vol. X-G-2025, pp. 901–906, 2025, doi: [10.5194/isprs-annals-x-g-2025-901-2025](https://doi.org/10.5194/isprs-annals-x-g-2025-901-2025).
+
+M. Bassier, J. Vermandere, S. De Geyter, and H. De Winter, "GEOMAPI: Processing close-range sensing data of construction scenes with semantic web technologies," _Autom. Constr._, vol. 164, p. 105454, 2024, doi: [10.1016/j.autcon.2024.105454](https://doi.org/10.1016/j.autcon.2024.105454).
+
+SAM 3D Team, X. Chen, F.-J. Chu, P. Gleize, K. J. Liang, A. Sax, H. Tang, W. Wang, M. Guo, T. Hardin, X. Li, A. Lin, J. Liu, Z. Ma, A. Sagar, B. Song, X. Wang, J. Yang, B. Zhang, P. Dollár, G. Gkioxari, M. Feiszli, and J. Malik, "SAM 3D: 3Dfy anything in images," _arXiv_, Nov. 2025, doi: [10.48550/arXiv.2511.16624](https://doi.org/10.48550/arXiv.2511.16624).
+
+MarketsandMarkets, "Digital twin market report," Aug. 2025. [Online]. Available: [https://www.marketsandmarkets.com/Market-Reports/digital-twin-market-225269522.html](https://www.marketsandmarkets.com/Market-Reports/digital-twin-market-225269522.html)
+
+Mordor Intelligence, "Immersive training market report," Jan. 2026. [Online]. Available: [https://www.mordorintelligence.com/industry-reports/immersive-training-market](https://www.mordorintelligence.com/industry-reports/immersive-training-market)
+
+TechSci Research, "Global 6G market report," TechSci Research, Rep. 15873. [Online]. Available: [https://www.techsciresearch.com/report/global-6g-market/15873.html](https://www.techsciresearch.com/report/global-6g-market/15873.html)
+
+Market Research Future (MRFR), "AR and VR in training market," MRFR. [Online]. Available: [https://www.marketresearchfuture.com/reports/ar-and-vr-in-training-market-24399](https://www.marketresearchfuture.com/reports/ar-and-vr-in-training-market-24399)
+
+Verified Market Reports, "AR and VR training market," Verified Market Reports. [Online]. Available: [https://www.verifiedmarketreports.com/product/ar-and-vr-training-market/](https://www.verifiedmarketreports.com/product/ar-and-vr-training-market/)

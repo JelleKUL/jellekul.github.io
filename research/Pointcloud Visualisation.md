@@ -1,6 +1,6 @@
 ---
 layout: publication
-title: "\rVoxel guided object completion evaluation of indoor scenes"
+title: Pointcloud Visualisation
 date: 2026-06-01
 permalink: /publications/pointcloud-visualisation/
 icon: /img/icons/Geometry pointcloudVisualisationpng
@@ -12,6 +12,7 @@ type: Thesis
 description: A thesis exploring Interactable realtime pointcloud viewing
 bibtex:
 ---
+# Pointcloud Visualisation
 # Pointcloud Visualisation
 
 Plan: Een virtuele wandeling maken door een pointcloud in Unity

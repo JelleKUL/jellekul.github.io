@@ -205,21 +205,27 @@
 > This chapter analyses the incomplete scene, first the different objects in the scene, then the per-object and scene wide occlusion.
 
 - **Introduction**
-	- If we want to complete the objects and scene separately we need to know which  is which
-	- If we want to fill in the missing regions, we need to know what is missing
+	- If we want to complete the objects and scene separately we need to know which  is which -> object detection
+		- object completion methods from chapter "object completion" often rely on nicely aligned and properly bounded boxes, but current detection methods can only bound the present points, not predict where the missing points are to properly fit the bb so it fits the complete object. -> further refinement is needed for better results 
+		- so there is also a need for bounding box refinement
+	- If we want to fill in the missing regions, we need to know what is missing vs. what just doesn't exist -> occlusion detection
+		- we do this both for the whole scene and the objects separately
 - **Related work**
 	- 3D object detection
-	- Instance segmentation
+		- votenet
+	- symmetry detection
+	- plane segmentation
 	- Occlusion detection
 - **Methodology**
 	- Object isolation
 		- 3d object detection in the scene
-		- ==list different detection frameworks?==
+			- Use votenet
 		- Refine detected oriented bounding box of estimated complete object
 			- Symmetry detection in partial pcd to determine the center and principal axis of the boundingbox.
 			- Use remaining empty scene as limiting surface for boundingbox (not go through walls)
+				- use an itterative RANSAC plane detection on the remaining scene to get the large planes and use those to make the oundingboxes smaller, and also keep them symmetrical if a clear symmetry axis is found
 	- Occlusion detection
-		- Voxelized raytracing in the scene from scanner perspective on 2 levels
+		- Voxelized raymarching in the scene from scanner perspective on 2 levels
 		- Object level
 			- calculate the occlusion per object within it's oriented bounding box (oriented is important!)
 		- Scene level
@@ -227,8 +233,20 @@
 - **Experiments**
 	- Object isolation
 		- evaluating the accuracy and IOU of the boundingboxes
+		- using votenet on: Matterport3D, Scannet and sunrgbd and also V-scan
+	- Symmetry detection
+		- evaluate on shapenet dataset with partial scans of single objects
+		═══ chair (03001627) | n=100 | k=3 ═══
+	  Overall mean error : 24.15° ± 27.65°
+	     primary axis : mean= 8.01°  found=94.0%  (n=100)
+	   secondary axis : mean=33.97°  found=70.0%  (n=100)
+	    tertiary axis : mean=30.48°  found=78.0%  (n=100)
+	  Visible frac       : 36.5%
+	  Score full/partial : 0.355 / 0.297
 	- Occlusion detection
-		- Show results, highlight the shortcomings due depending on the voxel resolution
+		- ground truth is the based on a difference mask between the empty and fully furnished panoramas. check if the coordinates of the occluded voxels are behind the changed zones.
+		- ════════════════════════════════════════════════════════════ CLASS SUMMARY (mean ± std over all scenes in class) ════════════════════════════════════════════════════════════ Industrial_1_Leica-P30 n=100 covered= 73.24%±14.99 uncovered= 26.76%±14.99 avg_new_pts= 11894 Office_1_Leica-P30 n= 40 covered= 76.28%±14.74 uncovered= 23.72%±14.74 avg_new_pts= 9631 bedroom_Leica-P30 n= 20 covered= 62.33%±26.32 uncovered= 37.67%±26.32 avg_new_pts= 2211 diningroom_Leica-P30 n= 20 covered= 71.88%±19.19 uncovered= 28.12%±19.19 avg_new_pts= 4093 livingroom_Leica-P30 n= 20 covered= 51.16%±14.78 uncovered= 48.84%±14.78 avg_new_pts= 3215
+		- Show results, highlight the shortcomings depending on the voxel resolution
 		- ==Compare with V-Scan ground truth mesh vs pointcloud occlusion?==
 - **Conclusion**
 
@@ -238,30 +256,42 @@
 - **Introduction**
 	- we use the remaining environment and the full scene occlusion detection to fill in the missing parts and convert it to a textured mesh
 - **Related Work**
-	- plane detection
 	- scene segmentation
 	- geometry reconstruction
 	- Image inpainting
-	- object removal
-		- matterport's defurnishing: only on pano's
+	- object removal scene inpaining
+		- matterport's defurnishing: only on pano's ect..
 - **Methodology**
 	- Plane Instance segmentation
-		- RANSAC plane segmentation of pointcloud
-		- simple semantic segmentation based on point normals (ceiling, wall, floor)
+		- Use the RANSAC planes of the previous chapter on the object-removed scene
+		- plane boundary detection
+			- cut all the planes and filter out the empty planes that do not contain any points
 	- geometry reconstruction
-		- plane by plane: calculate the plane intersections of all the planes that are within the scene bounding box.
-		- use the scanned points of the plane to determine which parts of the sliced up plane are at least partially scanned.
-		- Use the occlusion grid to filter the partial planes because there cannot be new geometry where there were no occlusions
-		- Every partial plane of the same original plane is recombined into one.
+		- we want to create a mesh
+		- we sample the plane at the unoccupied areas
+		- we subdivide the detected plane to the voxel grid density
+		- we project each vertex in the perpendicular direction to the closest scanned point of that plane, except for the edges, these are kept to ensure a tight fit to the other planes.
+		- The rooms are created as full walls, any openings like windows and door are handled later in chapter 8 to make them dynamic
 	- texture inpainting
-		- Each plane is mapped to a 2D uv plane along with the original points of that plane.
-		- The pano image is remapped to each plane individually using a 3D-to-uv projection.
-		- The points are splatted on the image to create an inpainting mask.
-		- Inpainting network paints the missing texture on the masked image
-		- The inpainted image is used as the texture for each plane.
+		- Each plane is mapped to a 2D uv plane with the up axis and orientation towards the scanner position kept so the inpainting can have a logical layout
+		- On the pano image, we generate 2 depthmaps, one of the reconstructed planes and on of the captured scene( if not already available) then we compare depths to both images and all the points that are closer than the planes are converted to an image mask. (this can also be checked with the occlusion mask if the resolution is high enough)
+		- The pano image and mask are remapped to each plane individually using a 3D-to-uv projection.
+		- Inpainting network paints the missing texture on the masked image for each plane indivudually
+		- The inpainted textures are remapped to the reconstructed scene
 - **Experiments**
-	- evaluation of geometric and textural accuracy of synthetic dataset
+	- evaluation of geometric and textural accuracy of synthetic dataset on V-scan (see table)
+	- Qualitative evaluation on the matterport dataset (I will add this)
 - **Conclusion**
+
+V-scan experiment results:
+
+| Category       | Chamfer ↓ (m)   | F-score @5cm ↑  | PSNR ↑ (dB)   | SSIM ↑          | LPIPS ↓         |
+| -------------- | --------------- | --------------- | ------------- | --------------- | --------------- |
+| **Bedroom**    | 0.0161 ± 0.0022 | 0.9756 ± 0.0109 | 59.25 ± 11.91 | 0.9902 ± 0.0049 | 0.0121 ± 0.0054 |
+| **Diningroom** | 0.0152 ± 0.0013 | 0.9807 ± 0.0074 | 51.25 ± 10.70 | 0.9833 ± 0.0077 | 0.0231 ± 0.0114 |
+| **Industrial** | 0.0183 ± 0.0016 | 0.9823 ± 0.0064 | 44.62 ± 5.47  | 0.9345 ± 0.0215 | 0.0497 ± 0.0121 |
+| **Livingroom** | 0.0153 ± 0.0013 | 0.9798 ± 0.0074 | 48.30 ± 12.36 | 0.9822 ± 0.0094 | 0.0208 ± 0.0143 |
+| **Office**     | 0.0182 ± 0.0013 | 0.9842 ± 0.0037 | 42.79 ± 3.56  | 0.9246 ± 0.0356 | 0.0449 ± 0.0081 |
 
 ## 7. Object completion
 > Compare the 2 proposed object completion models, this will be the biggest chapter for sure
@@ -295,21 +325,21 @@
 > Turning the static completed objects into dynamic ones
 
 - **Introduction**
-	- ==from textured mesh back to CSDF for dynamification?==
 	- the final step in our dynamification process 
-	- Putting the scene back together
+	- make the scene (the walls, floor and ceilings scaleable and the doors and windows also moveable and scalable) and the objects (part-aware scalable)
+	- Putting the scene back together as one dynamic representation
 - **Related Work**
 	- part segmentation
 	- surface deformation
 	- scaling
 - **Methodology**
-	- Part segmentation
-	- Scaling zone definition
-	- Value interpolation
-	- Value repeating
+	- Scene dynamification
+		- see notebook
+	- object dynamification
+		- see paper
 - **Experiments**
-	- empirical comparison of the scaled meshes with the different methods
-	-  use on different datasets (matterport, scannet, *v-scan*)
+	- showcase of dynamic environments of different datasets
+	- object focus: empirical comparison of the scaled meshes with the different methods
 - **Conclusion**
 
 ## 9. Conclusions & future works
@@ -319,6 +349,7 @@
 	- creation of dynamic, complete environments
 	- interaction with the digital environment
 	- limitations
+	- the gap towards the construction industry is still present, because of the huge variety of stuff 
 - **Future work**
 	- Increase robustness and expand the scope beyond single room
 	- increase the fidelity even more
@@ -337,3 +368,54 @@
 	- explain the IOF business plan
 - **Further valorisation potentials and market position**
 - **Conclusions**
+## 10. Valorisation
+
+10.1 Introduction
+     - Goal of valorisation
+     - Explain the core value proposition: faster digitisation of reality
+     - Overview of the chapter
+
+10.2 Open-Source Software Repositories
+     - Describe the main repo's:
+	     - Geomapi/geosharpi
+		     - data capture and standardisation
+		 - https://github.com/JelleKUL/VirtualScanner
+			 - procedural dataset generation
+	     - https://github.com/JelleKUL/DRM
+		     - the full pipeline compatible with modular external repos for the complex tasks
+     - Address: community, maintenance, infrastructure, validation
+	     - it's on github and public under MIT
+
+10.3 Public Dataset: V-Scan
+     - What it contains, 
+	     - (see chapter 3 for what it contains)
+     - why it's valuable
+	     - (see chapter 3)
+     - how it's shared
+	     - Available on github: as an output from the Virtualscanner repo
+
+10.4 Proof-of-Concept Applications
+- Room digitisation
+	- Reorganisation planning, renovations, gamification, real estate 
+- Digital Upcycling
+
+10.5 Valorisation Potential and Market Position
+     10.5.1 Target Markets and End Users
+            - AEC/Arts, Manufacturing, AR/VR
+            - Name concrete end users and early adopters
+     10.5.2 Added Value and Differentiation
+            - Time savings analysis
+            - How this differs from existing solutions
+     10.5.3 Intellectual Property and Freedom-to-Operate
+            - Background IP (GEOMAPI MIT, publications as prior art)
+            - FTO screening results
+            - Foreground IP strategy
+     10.5.4 Case Study: IOF Valorisation Trajectory
+            - Sprint structure, consortium, submission targets
+
+10.6 Dissemination
+     - Publications (6 peer-reviewed papers)
+     - Conference presentations
+     - Open-source community engagement
+
+10.7 Conclusion
