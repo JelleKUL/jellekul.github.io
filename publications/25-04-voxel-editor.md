@@ -3,16 +3,13 @@ layout: publication
 title: Guided object completion with interactive voxel editing
 date: 2025-04-12
 permalink: /publications/voxel-editor/
-icon: "img/icons/Voxel Generation.png"
-methodImage: "img/publications/voxel-editor-method.png"
-doilink: 
-githublink: "https://github.com/JelleKUL/geosharpi"
+icon: img/icons/Voxel Generation.png
+methodImage: img/publications/voxel-editor-method.png
+doilink: https://doi.org/10.5194/isprs-annals-x-g-2025-901-2025
+githublink: https://github.com/JelleKUL/geosharpi
 objective: 3
 type: Conference
-
 description: "In this work, we aim to improve the completion of objects from partially scanned indoor scenes by leveraging environmental cues to better inform the boundaries of incomplete objects. Furthermore, we introduce an interactive voxel editor that allows users to guide the object completion process toward more accurate results. Our contributions are twofold: (1) a novel boundary-defining and object-alignment method that integrates with existing object completion pipelines, and (2) the development of an interactive voxel editing tool that enhances user control over the completion process. Experimental results demonstrate the effectiveness of our approach in improving object completion in complex, real-world scanned scenes."
-
-
 ---
 
 # Guided object completion with interactive voxel editing

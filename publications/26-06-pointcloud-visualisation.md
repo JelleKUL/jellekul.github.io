@@ -4,7 +4,7 @@ title: Pointcloud Visualisation
 date: 2026-06-01
 permalink: /publications/pointcloud-visualisation/
 icon:
-methodImage: img/publications/pointcloudVisualisationMethodology.png
+methodImage:
 doilink: https://lib.is/lbsn9994932389601471/representation?libis=11:1:1&lang=en
 githublink: https://github.com/verlindenruben-lang/Walkthrough-Point-Cloud-Unity
 objective: 3

@@ -5,7 +5,7 @@ date: 2026-07-05
 permalink: /publications/object-dynamification/
 icon: img/icons/VoxelEditing.png
 methodImage: img/publications/objectDynamificationMethod.png
-doilink:
+doilink: https://doi.org/10.5194/isprs-annals-xi-2-2026-359-2026
 githublink: https://github.com/JelleKUL/generationtools
 objective: 3
 type: Conference
