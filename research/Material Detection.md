@@ -1,17 +1,4 @@
----
-layout: publication
-title: "\rVoxel guided object completion evaluation of indoor scenes"
-date: 2027-06-01
-permalink: /publications/material-detection/
-icon: /img/icons/Geometry pointcloudVisualisationpng
-methodImage: img/publications/pointcloudVisualisationMethodology.png
-doilink:
-githublink:
-objective: 2
-type: Thesis
-description: A thesis exploring the Material detection SOTA
-bibtex:
----
+
 # Material Segmentation
 > Herkennen van verschillende materialen in 3D scans
 
